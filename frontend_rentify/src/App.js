@@ -1,36 +1,3 @@
-<<<<<<< HEAD
-import React, { useEffect, useState } from 'react';
-
-function App() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    // Fetch data from the server when the component mounts
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      // Make an HTTP GET request to the server's API endpoint
-      const response = await fetch('/api/users');
-      const responseData = await response.json();
-
-      // Update the data state with the fetched data
-      setData(responseData);
-    } catch (error) {
-      console.error('Error fetching data', error);
-    }
-  };
-
-  return (
-    <div>
-      <h1>Test1</h1>
-      <ul>
-        {data.map(item => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
-=======
 // src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -48,7 +15,6 @@ const App = () => {
           </Switch>
         </div>
       </Router>
->>>>>>> d5d7e9e801a755ee8478d045be5be9fbf24bea5e
     </div>
   );
 };
