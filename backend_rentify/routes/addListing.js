@@ -23,7 +23,7 @@ module.exports = (db) => {
 
   // add product form
   router.post("/addListing", (req, res) => {
-    const product_name = req.body.product_name;
+    const product_name = req.body.name;
     const description = req.body.description;
     const photo_url = req.body.photo_url;
     const brand = req.body.brand;
@@ -39,7 +39,7 @@ module.exports = (db) => {
       active,
     ];
     const queryString = `
-      INSERT INTO products (product_name, description, photo_url, brand, price, active)
+      INSERT INTO products (name, description, photo_url, brand, price, active)
       VALUES ($1, $2, $3, $4, $5, $6)
       RETURNING *;
     `;
