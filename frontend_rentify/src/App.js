@@ -26,7 +26,7 @@ function App() {
       <h1>Test1</h1>
       <ul>
         {data.map(item => (
-          <li key={item.id}>{item.name}</li>
+          <li key={item.customer_id}>{item.customer_name}</li>
         ))}
       </ul>    
     </div>
