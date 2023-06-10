@@ -11,7 +11,7 @@ function App() {
   const fetchData = async () => {
     try {
       // Make an HTTP GET request to the server's API endpoint
-      const response = await fetch('/api/users');
+      const response = await fetch('http://localhost:8000/api/users');
       const responseData = await response.json();
 
       // Update the data state with the fetched data
@@ -26,7 +26,7 @@ function App() {
       <h1>Test1</h1>
       <ul>
         {data.map(item => (
-          <li key={item.customer_id}>{item.customer_name}</li>
+          <li key={item.users_id}>{item.users_name}</li>
         ))}
       </ul>    
     </div>

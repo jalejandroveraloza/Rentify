@@ -1,4 +1,3 @@
-INSERT INTO categories (category_name, category_type, customer_id) VALUES
-  ('Electronics', 'Electronics', 1),
-  ('Clothing', 'Fashion', 2),
-  ('Home Appliances', 'Electronics', 3);
+INSERT INTO categories (name, type, user_id) VALUES
+('Electronics', 'Technology', 1),
+('Clothing', 'Fashion', 2);

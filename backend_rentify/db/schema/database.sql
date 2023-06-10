@@ -1,44 +1,61 @@
-CREATE TABLE customers (
-  customer_id SERIAL PRIMARY KEY,
-  customer_name VARCHAR(255) NOT NULL
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS rent_orders CASCADE;
+DROP TABLE IF EXISTS categories CASCADE;
+DROP TABLE IF EXISTS products CASCADE;
+DROP TABLE IF EXISTS shopping_cart CASCADE;
+DROP TABLE IF EXISTS payments CASCADE;
+DROP TABLE IF EXISTS favourite_products CASCADE;
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  address VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE rent_orders (
-  order_id SERIAL PRIMARY KEY,
-  customer_id INT REFERENCES customers (customer_id) ON DELETE CASCADE,
-  order_date DATE NOT NULL
+  id SERIAL PRIMARY KEY,
+  user_id INT REFERENCES users(id) ON DELETE CASCADE,
+  date DATE NOT NULL
 );
 
 CREATE TABLE categories (
-  category_id SERIAL PRIMARY KEY,
-  category_name VARCHAR(255) NOT NULL,
-  category_type VARCHAR(255) NOT NULL,
-  customer_id INT REFERENCES customers (customer_id) ON DELETE CASCADE
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  user_id INT REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE products (
-  product_id SERIAL PRIMARY KEY,
-  category_id INT REFERENCES categories (category_id) ON DELETE CASCADE,
-  product_name VARCHAR(255) NOT NULL,
-  price DECIMAL(10, 2) NOT NULL,
-  description TEXT,
-  brand VARCHAR(255),
-  photo_url VARCHAR(255),
-  active BOOLEAN NOT NULL
+  id SERIAL PRIMARY KEY,
+  category_id INT REFERENCES categories(id) ON DELETE CASCADE,
+  name VARCHAR(255) NOT NULL,
+  price SMALLINT NOT NULL,
+  description TEXT NOT NULL,
+  brand VARCHAR(255) NOT NULL,
+  photo_url VARCHAR(255) NOT NULL,
+  active BOOLEAN NOT NULL DEFAULT true
 );
 
 CREATE TABLE shopping_cart (
-  shoppingcart_id SERIAL PRIMARY KEY,
-  product_id INT REFERENCES products (product_id) ON DELETE CASCADE,
-  product_qty INT NOT NULL,
-  amount_per_item DECIMAL(10, 2) NOT NULL,
-  order_id INT REFERENCES rent_orders (order_id) ON DELETE CASCADE
+  id SERIAL PRIMARY KEY,
+  product_id INT REFERENCES products(id) ON DELETE CASCADE,
+  quantity INT NOT NULL,
+  amount_per_item SMALLINT NOT NULL,
+  order_id INT REFERENCES rent_orders(id) ON DELETE CASCADE
 );
 
 CREATE TABLE payments (
-  payment_id SERIAL PRIMARY KEY,
-  order_id INT REFERENCES rent_orders (order_id) ON DELETE CASCADE,
-  product_id INT REFERENCES products (product_id) ON DELETE CASCADE,
-  total_amount DECIMAL(10, 2) NOT NULL,
-  payment_date DATE NOT NULL
+  id SERIAL PRIMARY KEY,
+  order_id INT REFERENCES rent_orders(id) ON DELETE CASCADE,
+  product_id INT REFERENCES products(id) ON DELETE CASCADE,
+  total SMALLINT NOT NULL,
+  date DATE NOT NULL
+);
+
+CREATE TABLE favourite_products (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE
 );
