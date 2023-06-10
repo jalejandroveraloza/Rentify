@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jalejandroveraloza/Rentify#readme",
   "dependencies": {
+    "axios": "^1.4.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "pg": "^8.11.0"
