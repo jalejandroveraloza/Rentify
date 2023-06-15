@@ -1,36 +1,65 @@
 .login-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
 .login-box {
-  display: flex;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   border-radius: 2rem;
   text-align: center;
-  flex-direction: column;
-  width: 70%;
+  width: 50%;
+  padding: 2rem;
 }
 
+.join-today {
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.login-options {
+  margin-bottom: 1.5rem;
+}
+
+.login-options h3 {
+  margin-bottom: 1rem;
+}
+
+.email-button,
+.register-button,
 .google-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.7rem;
-  margin-left: .5rem;
+  padding: 0.5rem 0.7rem;
   background-color: #414e62;
   color: #fff;
   border: none;
   cursor: pointer;
   transition: background-color 0.3s;
-  font-size: 1.2rem;
-  border-bottom-left-radius: 2rem;
-  border-bottom-right-radius: 2rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  width: 100%;
 }
 
+.email-button:hover,
+.register-button:hover,
 .google-button:hover {
   background-color: #3663c5;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.divider hr {
+  flex-grow: 1;
+  margin: 0;
+}
+
+.divider p {
+  margin: 0 1rem;
 }
