@@ -3,11 +3,74 @@ import { FcGoogle } from 'react-icons/fc';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { auth } from '../../utils/firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import "./login.css";
+import './login.css';
+import { useNavigate } from 'react-router-dom';
+
+const EmailLogin = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    // Perform login logic
+    navigate('/'); // Redirect back to the main login page
+  };
+
+  return (
+    <div>
+      <h2>Email Login</h2>
+      <form onSubmit={handleLogin}>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
+};
+
+const Register = () => {
+  const navigate = useNavigate();
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    // Perform registration logic
+    navigate('/'); // Redirect back to the main login page
+  };
+
+  return (
+    <div>
+      <h2>Register</h2>
+      <form onSubmit={handleRegister}>
+        <div>
+          <label htmlFor="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <div>
+          <label htmlFor="address">Address:</label>
+          <input type="text" id="address" name="address" required />
+        </div>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  );
+};
 
 const Login = () => {
   const [user, loading] = useAuthState(auth);
-
+  const navigate = useNavigate();
   const googleProvider = new GoogleAuthProvider();
 
   const handleGoogleLogin = async () => {
@@ -20,11 +83,11 @@ const Login = () => {
   };
 
   const handleEmailLogin = () => {
-    // Handle email login logic here
+    navigate('/login/email'); // Redirect to the email login form
   };
 
   const handleRegister = () => {
-    // Handle registration logic here
+    navigate('/register'); // Redirect to the register form
   };
 
   return (
