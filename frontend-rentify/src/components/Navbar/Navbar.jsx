@@ -3,6 +3,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import "./navbar.css";
 import { DataContainer } from "../../App";
 import { Link } from "react-router-dom";
+import logo_rentify from "../../Images/logo_rentify.png";
 
 const NavBar = () => {
   const { CartItem, setCartItem } = useContext(DataContainer);
@@ -42,10 +43,10 @@ const NavBar = () => {
   return (
     <Navbar fixed="top" expand="md" className={isFixed ? "navbar fixed" : "navbar"}>
       <Container className="navbar-container">
-        <Navbar.Brand to="/">
-          <ion-icon name="bag"></ion-icon>
-          <h1 className="logo">Rentify</h1>
-        </Navbar.Brand>
+      <Link to="/" className="navbar-brand">
+         <img src={logo_rentify} alt="Logo" className="custom-icon" />
+          
+        </Link>
         {/* Media cart and toggle */}
         <div className="d-flex">
           <div className="media-cart">
