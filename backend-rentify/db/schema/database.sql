@@ -4,9 +4,7 @@ DROP TABLE IF EXISTS categories CASCADE;
 DROP TABLE IF EXISTS products CASCADE;
 DROP TABLE IF EXISTS orders CASCADE;
 
--- DROP TABLE IF EXISTS payments CASCADE;
--- DROP TABLE IF EXISTS shopping_cart CASCADE;
--- DROP TABLE IF EXISTS favourite_products CASCADE;
+
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -47,25 +45,3 @@ CREATE TABLE products (
   active BOOLEAN NOT NULL DEFAULT true
 );
 
--- CREATE TABLE shopping_cart (
---   id SERIAL PRIMARY KEY,
---   product_id INT REFERENCES products(id) ON DELETE CASCADE,
---   quantity INT NOT NULL,
---   amount_per_item SMALLINT NOT NULL,
---   order_id INT REFERENCES rent_orders(id) ON DELETE CASCADE
--- );
-
--- CREATE TABLE payments (
---   id SERIAL PRIMARY KEY,
---   order_id INT REFERENCES rent_orders(id) ON DELETE CASCADE,
---   product_id INT REFERENCES products(id) ON DELETE CASCADE,
---   total SMALLINT NOT NULL,
---   date DATE NOT NULL
--- );
-
-
--- CREATE TABLE favourite_products (
---   id SERIAL PRIMARY KEY NOT NULL,
---   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
---   product_id INTEGER REFERENCES products(id) ON DELETE CASCADE
--- );
