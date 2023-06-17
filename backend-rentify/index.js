@@ -1,32 +1,27 @@
 const express = require("express");
 const app = express();
-const { Pool } = require("pg");
 const cors = require("cors");
-const userRouter = require("./routes/user.route.js");
+const userRouter = require("./routes/users.js");
+const productRouter = require("./routes/products.js");
+const categoryRouter = require("./routes/categories.js");
+const orderRouter = require("./routes/orders.js");
 const PORT = 8000;
-const morgan = require('morgan');
-
+const morgan = require("morgan");
+const pool = require("./db.js");
 
 //middleware
 
 app.use(cors());
 app.use(express.json());
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 
 
-// const usersRoutes = require("./routes/users");
-// const productRoutes = require("./routes/product");
-// const favouritesRoutes = require("./routes/favourites");
-// const searchRoutes = require("./routes/search");
-// const addListingRoutes = require("./routes/addProduct");
+app.use("/api/user", userRouter(pool));
+app.use("/api/product", productRouter(pool));
+app.use("/api/category", categoryRouter(pool));
+app.use("/api/order", orderRouter(pool));
 
-// app.use("/api/users", usersRoutes(pool));
-// app.use("/products", productRoutes(pool));
-// app.use("/favourites", favouritesRoutes(pool));
-// app.use("/", searchRoutes(pool));
-// app.use("/", addListingRoutes(pool));
 
-app.use("/api/user", userRouter);
 
 // Start the server
 app.listen(PORT, () => {

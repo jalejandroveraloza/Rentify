@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./searchbar.css";
-import { products } from "../../utils/products";
+import { products } from "../../utils/products"; //change for api fetch to database
 const SearchBar = ({setFilterList}) => {
     const [inputValue,setInputValue] =useState(null);
     const handelChange =(input)=> {

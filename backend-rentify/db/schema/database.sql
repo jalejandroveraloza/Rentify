@@ -2,9 +2,11 @@ DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS rent_orders CASCADE;
 DROP TABLE IF EXISTS categories CASCADE;
 DROP TABLE IF EXISTS products CASCADE;
-DROP TABLE IF EXISTS shopping_cart CASCADE;
-DROP TABLE IF EXISTS payments CASCADE;
-DROP TABLE IF EXISTS favourite_products CASCADE;
+DROP TABLE IF EXISTS orders CASCADE;
+
+-- DROP TABLE IF EXISTS payments CASCADE;
+-- DROP TABLE IF EXISTS shopping_cart CASCADE;
+-- DROP TABLE IF EXISTS favourite_products CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -14,11 +16,19 @@ CREATE TABLE users (
   address VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE rent_orders (
+CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
+  product_id INT REFERENCES products(id) ON DELETE CASCADE,
+  total SMALLINT NOT NULL,
   date DATE NOT NULL
 );
+
+CREATE TABLE rent_orders (
+  id SERIAL PRIMARY KEY,
+  product_id INT REFERENCES products(id) ON DELETE CASCADE,
+  order_id INT REFERENCES orders(id) ON DELETE CASCADE
+  );
 
 CREATE TABLE categories (
   id SERIAL PRIMARY KEY,
@@ -37,24 +47,25 @@ CREATE TABLE products (
   active BOOLEAN NOT NULL DEFAULT true
 );
 
-CREATE TABLE shopping_cart (
-  id SERIAL PRIMARY KEY,
-  product_id INT REFERENCES products(id) ON DELETE CASCADE,
-  quantity INT NOT NULL,
-  amount_per_item SMALLINT NOT NULL,
-  order_id INT REFERENCES rent_orders(id) ON DELETE CASCADE
-);
+-- CREATE TABLE shopping_cart (
+--   id SERIAL PRIMARY KEY,
+--   product_id INT REFERENCES products(id) ON DELETE CASCADE,
+--   quantity INT NOT NULL,
+--   amount_per_item SMALLINT NOT NULL,
+--   order_id INT REFERENCES rent_orders(id) ON DELETE CASCADE
+-- );
 
-CREATE TABLE payments (
-  id SERIAL PRIMARY KEY,
-  order_id INT REFERENCES rent_orders(id) ON DELETE CASCADE,
-  product_id INT REFERENCES products(id) ON DELETE CASCADE,
-  total SMALLINT NOT NULL,
-  date DATE NOT NULL
-);
+-- CREATE TABLE payments (
+--   id SERIAL PRIMARY KEY,
+--   order_id INT REFERENCES rent_orders(id) ON DELETE CASCADE,
+--   product_id INT REFERENCES products(id) ON DELETE CASCADE,
+--   total SMALLINT NOT NULL,
+--   date DATE NOT NULL
+-- );
 
-CREATE TABLE favourite_products (
-  id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  product_id INTEGER REFERENCES products(id) ON DELETE CASCADE
-);
+
+-- CREATE TABLE favourite_products (
+--   id SERIAL PRIMARY KEY NOT NULL,
+--   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+--   product_id INTEGER REFERENCES products(id) ON DELETE CASCADE
+-- );

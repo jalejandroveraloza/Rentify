@@ -1,10 +1,10 @@
 const express = require("express");
-const app = express();
-const pool = require("../db");
+const router = express.Router();
 
 // GET /categories
+module.exports = (pool) => {
 
-app.get('/categories', async (req, res) => {
+router.get('/categories', async (req, res) => {
   try {
     const categories = await pool.query('SELECT * FROM categories');
     res.json(categories.rows);
@@ -15,7 +15,7 @@ app.get('/categories', async (req, res) => {
 
 // POST /categories
 
-app.post('/categories', async (req, res) => {
+router.post('/categories', async (req, res) => {
   const { name } = req.body;
   try {
     const newCategory = await pool.query('INSERT INTO categories (name) VALUES ($1) RETURNING *', [name]);
@@ -25,3 +25,5 @@ app.post('/categories', async (req, res) => {
   }
 });
 
+return router;
+};
