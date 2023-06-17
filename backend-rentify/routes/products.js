@@ -119,5 +119,39 @@ module.exports = (pool) => {
     }
   });
 
+   // Get best sales products
+   router.get("/best-sales", async (req, res) => {
+    try {
+      const result = await pool.query("SELECT * FROM products ORDER BY sales DESC LIMIT 10");
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving best sales products:", error);
+      res.status(500).json({ error: "An error occurred while retrieving best sales products" });
+    }
+  });
+
+  // Get new arrival products
+  router.get("/new-arrivals", async (req, res) => {
+    try {
+      const result = await pool.query("SELECT * FROM products ORDER BY created_at DESC LIMIT 10");
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving new arrival products:", error);
+      res.status(500).json({ error: "An error occurred while retrieving new arrival products" });
+    }
+  });
+
+   // Get discounted products
+   router.get("/discounted", async (req, res) => {
+    try {
+      const result = await pool.query("SELECT * FROM products WHERE discounted = true");
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving discounted products:", error);
+      res.status(500).json({ error: "An error occurred while retrieving discounted products" });
+    }
+  });
+
+
   return router;
 };

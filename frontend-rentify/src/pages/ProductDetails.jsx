@@ -54,8 +54,13 @@ const ProductDetails = () => {
                                 <span>category: {selectedProduct?.category}</span>
                             </div>
                             <p>{selectedProduct?.shortDesc}</p>
-                            <input className="qty-input" type="number" placeholder="Qty" value={quantity} onChange={handleQuantityChange} />
-                            <button aria-label="Add" type="submit" className="add" onClick={() => handelAdd(selectedProduct,quantity)}>Add To Cart</button>
+                            <div className="quantity-input">
+  <input className="qty-input" type="number" placeholder="Qty" value={quantity} onChange={handleQuantityChange} />
+  <span style={{ marginLeft: '5px' }}>{quantity} {quantity === 1 ? 'day' : 'days'}</span>
+</div>
+<button aria-label="Add" type="submit" className="add" onClick={() => handelAdd(selectedProduct, quantity)}>Add To Cart</button>
+
+
                         </Col>
                     </Row>
                 </Container>
@@ -70,7 +75,6 @@ const ProductDetails = () => {
                     {listSelected ==="desc"?
                         <p>{selectedProduct?.description}</p>:
                         <div className="rates">
-                            
                         </div>
                     }
                 </Container>

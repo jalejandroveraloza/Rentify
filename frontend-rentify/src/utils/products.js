@@ -62,7 +62,7 @@ export const SliderData = [
 
 export const serviceData = [
   {
-    icon: <ion-icon name="car"></ion-icon>,
+    icon:<ion-icon name="close-circle-outline"></ion-icon>,
     title: "No cancel fee",
     subtitle: "Feel free to cancel at any time.",
     bg: "#FFE4B5",
@@ -90,19 +90,19 @@ export const serviceData = [
 export const discoutProducts = [
   {
     id: "01",
-    productName: "Stone and Beam Westview ",
+    productName: "Epson Home Cinema Projector ",
     imgUrl: productImg01,
-    category: "sofa",
+    category: "technology",
     price: 193,
     discount:30,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Enjoy a cinematic experience with the Epson Home Cinema Projector.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Epson Home Cinema Projector delivers stunning, high-definition visuals that bring your movies, games, and presentations to life. With advanced projection technology and vibrant color reproduction, this projector offers an immersive viewing experience. It features easy setup and versatile connectivity options, allowing you to enjoy your favorite content on the big screen. Whether you're hosting a movie night or giving a professional presentation, the Epson Home Cinema Projector is the perfect choice.",
     reviews: [
       {
         rating: 4.7,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        text: "The picture quality of this projector is outstanding!",
       },
     ],
     avgRating: 4.5,
@@ -111,7 +111,7 @@ export const discoutProducts = [
     id: "02",
     productName: "Rivet Bigelow Modern ",
     imgUrl: productImg02,
-    category: "sofa",
+    category: "technology",
     price: 253,
     discount:20,
     shortDesc:
@@ -230,7 +230,7 @@ export const products = [
     id: "01",
     productName: "Stone and Beam Westview ",
     imgUrl: productImg01,
-    category: "sofa",
+    category: "technology",
     price: 193,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -249,7 +249,7 @@ export const products = [
     id: "02",
     productName: "Rivet Bigelow Modern ",
     imgUrl: productImg02,
-    category: "sofa",
+    category: "technology",
     price: 253,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -270,9 +270,9 @@ export const products = [
 
   {
     id: "03",
-    productName: "Amazon Brand Modern Sofa",
+    productName: "Amazon Brand Modern technology",
     imgUrl: productImg03,
-    category: "sofa",
+    category: "technology",
     price: 173,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",

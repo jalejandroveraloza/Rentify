@@ -3,11 +3,13 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import "./navbar.css";
 import { DataContainer } from "../../App";
 import { Link } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
 
 const NavBar = () => {
-  const { CartItem, setCartItem } = useContext(DataContainer);
+  const { CartItem, setCartItem, loggedIn, setLoggedIn } = useContext(DataContainer);
   const [expand, setExpand] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // fixed Header
   function scrollHandler() {
@@ -32,11 +34,14 @@ const NavBar = () => {
     }
   }, []);
 
+  const handleLogout = () => {
+    // Your logout logic goes here
+    setLoggedIn(false);
+  };
+
   const Login = () => {
     // Your login component implementation goes here
-    return (
-      <></>
-    );
+    return <></>;
   };
 
   return (
@@ -68,6 +73,15 @@ const NavBar = () => {
             <span></span>
             <span></span>
           </Navbar.Toggle>
+          {loggedIn && (
+            <div className="user-icon">
+              <FaUser className="user-icon" />
+              <div className="user-options">
+                <Link to="/listings">View Listings</Link>
+                <button onClick={handleLogout}>Log Out</button>
+              </div>
+            </div>
+          )}
         </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end flex-grow-1 pe-3">
@@ -80,12 +94,16 @@ const NavBar = () => {
               <Link aria-label="Go to Shop Page" className="navbar-link" to="/shop" onClick={() => setExpand(false)}>
                 <span className="nav-link-label">Shop</span>
               </Link>
-              <Link aria-label="Go to Login Page" className="navbar-link" to="/login" onClick={() => setExpand(false)}>
-                <span className="nav-link-label">Login</span>
-            </Link>
-              <Nav.Item>
-              <Login />
-            </Nav.Item>
+              {!loggedIn && (
+                <Link aria-label="Go to Login Page" className="navbar-link" to="/login" onClick={() => setExpand(false)}>
+                  <span className="nav-link-label">Login</span>
+                </Link>
+              )}
+              {loggedIn && (
+                <Nav.Item>
+                  <Login />
+                </Nav.Item>
+              )}
             </Nav.Item>
             <Nav.Item className="expanded-cart">
               <Link aria-label="Go to Cart Page" to="/cart" className="cart" data-num={CartItem.length}>
