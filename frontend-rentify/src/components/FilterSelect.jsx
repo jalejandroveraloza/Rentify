@@ -2,11 +2,11 @@ import Select from 'react-select';
 import { products } from '../utils/products';
 
 const options = [
-    { value: "sofa", label: "Technology" },
-    { value: "chair", label: "Fashion" },
-    { value: "watch", label: "Cars" },
-    { value: "mobile", label: "Video games" },
-    { value: "wireless", label: "Sports" },
+    { value: "technology", label: "Technology" },
+    { value: "tools", label: "Tools" },
+    { value: "cars", label: "Cars" },
+    { value: "video games", label: "Video games" },
+    { value: "sports", label: "Sports" },
 ];
 
 const customStyles = {
