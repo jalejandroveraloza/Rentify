@@ -1,59 +1,118 @@
 const express = require("express");
-const router = express.Router();
-const db = require('./db');
+const app = express();
+const pool = require("../db");
 
-module.exports = (db) => {
-  // GET ------------------------------------------------------------------------
-  router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
-      .then((data) => {
-        const users = data.rows;
-        const currentUser = users[req.session.user_id];
-        res.render("login", { currentUser, users });
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
-  });
+// Get all users
+app.get("/api/users", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM users");
+    res.json(result.rows);
+  } catch (error) {
+    console.error("Error retrieving users:", error);
+    res.status(500).json({ error: "An error occurred while retrieving users" });
+  }
+});
 
-  router.get("/login", (req, res) => {
-    const currentUser = req.session.user_id;
-    const templateVars = { currentUser };
-    res.render("login", templateVars);
-  });
+// Get a specific user by ID
+app.get("/api/users/:id", async (req, res) => {
+  const userId = req.params.id;
+  try {
+    const result = await pool.query("SELECT * FROM users WHERE id = $1", [
+      userId,
+    ]);
+    if (result.rows.length === 0) {
+      res.status(404).json({ error: "User not found" });
+    } else {
+      res.json(result.rows[0]);
+    }
+  } catch (error) {
+    console.error("Error retrieving user:", error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while retrieving the user" });
+  }
+});
 
-  router.get("/login/:id", (req, res) => {
-    const currentUser = req.session.user_id;
-    req.session.user_id = req.params.id;
-    const templateVars = { currentUser };
-    res.redirect("/");
-  });
-  // END OF GET --------------------------------------------------------------------
+// Create a new user
+app.post("/api/users", async (req, res) => {
 
-  // POSTS -------------------------------------------------------------------------
-  router.post("/login", (req, res) => {
-    db.query(`SELECT * FROM users WHERE email = '${req.body.email}';`)
-      .then((data) => {
-        const user = data.rows[0];
-        if (user) {
-          req.session.user_id = user;
-          res.redirect("/");
-        } else {
-          res.json({ result: "Sorry, you are not a user" });
-        }
-      })
-      .catch((err) => {
-        res.status(500).json({ error: err.message });
-      });
-  });
+  const { name, email, password, address } = req.body;
 
-  // LOGOUT
-  router.post("/logout", (req, res) => {
-    req.session = null;
-    res.redirect("/");
-  });
+  try {
+    const result = await pool.query(
+      "INSERT INTO users (name, email, password, address) VALUES ($1, $2, $3, $4) RETURNING *",
+      [name, email, password, address]
+    );
+    res.json(result.rows[0]);
+  } catch (error) {
+    console.error("Error creating user:", error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while creating the user" });
+  }
+});
 
-  return router;
-};
+// Update an existing user
+app.put("/api/users/:id", async (req, res) => {
+  const userId = req.params.id;
+  const { name, email, password, address } = req.body;
+  try {
+    const result = await pool.query(
+      "UPDATE users SET name = $1, email = $2, password = $3, address = $4 WHERE id = $5 RETURNING *",
+      [name, email, password, address, userId]
+    );
+    if (result.rows.length === 0) {
+      res.status(404).json({ error: "User not found" });
+    } else {
+      res.json(result.rows[0]);
+    }
+  } catch (error) {
+    console.error("Error updating user:", error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while updating the user" });
+  }
+});
 
-module.exports = router;
+// Delete a user
+app.delete("/api/users/:id", async (req, res) => {
+  const userId = req.params.id;
+  try {
+    const result = await pool.query(
+      "DELETE FROM users WHERE id = $1 RETURNING *",
+      [userId]
+    );
+    if (result.rows.length === 0) {
+      res.status(404).json({ error: "User not found" });
+    } else {
+      res.json({ message: "User deleted successfully" });
+    }
+  } catch (error) {
+    console.error("Error deleting user:", error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while deleting the user" });
+  }
+});
+
+// Login user
+app.post("/api/users/login", async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const result = await pool.query(
+      "SELECT * FROM users WHERE email = $1 AND password = $2",
+      [email, password]
+    );
+    if (result.rows.length === 0) {
+      res.status(401).json({ error: "Invalid email or password" });
+    } else {
+      res.json(result.rows[0]);
+    }
+  } catch (error) {
+    console.error("Error logging in user:", error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while logging in the user" });
+  }
+});
+

@@ -1,11 +1,10 @@
 const express = require("express");
-const router = express.Router();
-const db = require("./db");
+const app = express();
+const pool = require("../db");
 
-module.exports = (db) => {
   // add a new product page (admin access only)
-  router.get("/products", (req, res) => {
-    db.query(
+  app.get("/products", (req, res) => {
+    pool.query(
       `SELECT * FROM products;`
     )
       .then((data) => {
@@ -23,7 +22,7 @@ module.exports = (db) => {
   });
 
   // add product form
-  router.post("/products", (req, res) => {
+  app.post("/products", (req, res) => {
     const product_name = req.body.name;
     const description = req.body.description;
     const photo_url = req.body.photo_url;
@@ -43,7 +42,7 @@ module.exports = (db) => {
       RETURNING *;
     `;
 
-    db.query(queryString, queryParams)
+    pool.query(queryString, queryParams)
       .then((data) => {
         const currentUser = req.session.user_id;
         const products = data.rows;
@@ -59,7 +58,4 @@ module.exports = (db) => {
       });
   });
 
-  return router;
-};
 
-module.exports = router;

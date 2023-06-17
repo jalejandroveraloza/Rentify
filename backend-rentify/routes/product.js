@@ -1,13 +1,13 @@
 const express = require("express");
-const router = express.Router();
-const db = require('./db');
+const app = express();
+const pool = require("../db");
 
-module.exports = (db) => {
   // Product page
-  router.get("/:id", (req, res) => {
+
+  app.get("/:id", (req, res) => {
     const id = req.params.id;
 
-    db.query(
+    pool.query(
       `SELECT * FROM products WHERE id = ${id};`
     )
       .then((data) => {
@@ -23,6 +23,5 @@ module.exports = (db) => {
       .catch((err) => {
         res.status(500).json({ error: err.message });
       });
-  })};
+  });
 
-  module.exports = router;

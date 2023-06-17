@@ -1,0 +1,62 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-box {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+  text-align: center;
+  width: 50%;
+  padding: 2rem;
+}
+
+.join-today {
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.register-success {
+  color: green;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex; /* Added */
+  align-items: flex-start; /* Added */
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: inline-block; /* Updated */
+  width: 100px; /* Added */
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 0.3rem;
+  border: 1px solid #ccc;
+}
+
+.register-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 1rem; /* Updated padding */
+  background-color: #414e62;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+  border-radius: 2rem;
+  width: 100%;
+}
+
+.register-button:hover {
+  background-color: #3663c5;
+}

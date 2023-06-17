@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './register.css';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -11,9 +12,8 @@ const Register = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-
     try {
-      const response = await fetch('/api/users', {
+      const response = await fetch('http://localhost:8000/api/user', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -22,14 +22,12 @@ const Register = () => {
       });
 
       if (response.ok) {
-        // User registration successful
-        setRegisterSuccess(true); // Set the registration success state
-        // Redirect to the home page after a short delay
+        setRegisterSuccess(true);
+        alert('User successfully registered!')
         setTimeout(() => {
           navigate('/');
-        }, 2000); // Delay of 2 seconds (2000 milliseconds)
+        }, 2000);
       } else {
-        // Handle error case
         const errorData = await response.json();
         console.log('Registration error:', errorData);
       }
@@ -39,56 +37,60 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h2>Register</h2>
-      {registerSuccess && <p>User registered successfully!</p>}
-      <form onSubmit={handleRegister}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="address">Address:</label>
-          <input
-            type="text"
-            id="address"
-            name="address"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Register</button>
-      </form>
+    <div className="register-container">
+      <div className="register-box">
+        <h2 className="join-today">Join Today</h2>
+        {registerSuccess && <p className="register-success">User registered successfully!</p>}
+        <form onSubmit={handleRegister}>
+          <div className="form-group">
+            <label htmlFor="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="address">Address:</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit" className="register-button">
+            Register
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

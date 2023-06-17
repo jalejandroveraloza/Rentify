@@ -1,10 +1,10 @@
 const express = require("express");
-const router = express.Router();
-const db = require('./db');
+const app = express();
+const pool = require("../db");
 
-module.exports = (db) => {
   // Search page to filter products by price
-  router.get("/search", (req, res) => {
+
+  app.get("/search", (req, res) => {
     let queryString = `SELECT * FROM products `;
 
     if (req.query.minPrice && req.query.maxPrice) {
@@ -15,7 +15,7 @@ module.exports = (db) => {
       queryString += `WHERE price <= ${req.query.maxPrice}`;
     }
 
-    db.query(queryString)
+    pool.query(queryString)
       .then((data) => {
         const user = req.session.user_id;
         const products = data.rows;
@@ -30,7 +30,3 @@ module.exports = (db) => {
       });
   });
 
-  return router;
-};
-
-module.exports = router;
