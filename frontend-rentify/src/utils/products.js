@@ -1,22 +1,22 @@
 import productImg01 from "../Images/technology1.jpg";
-import productImg02 from "../Images/double-sofa-02.png";
-import productImg03 from "../Images/double-sofa-03.png";
+import productImg02 from "../Images/technology2.jpg";
+import productImg03 from "../Images/technology3.jpg";
 
-import productImg04 from "../Images/single-sofa-01.jpg";
-import productImg05 from "../Images/single-sofa-02.jpg";
-import productImg06 from "../Images/single-sofa-03.jpg";
+import productImg04 from "../Images/technology4.jpg";
+import productImg05 from "../Images/technology5.jpg";
+import productImg06 from "../Images/technology6.png";
 import productImg007 from "../Images/single-sofa-04.png";
 
-import productImg07 from "../Images/arm-chair-01.jpg";
-import productImg08 from "../Images/arm-chair-02.jpg";
-import productImg09 from "../Images/arm-chair-03.jpg";
-import productImg10 from "../Images/arm-chair-01.jpg";
+import productImg07 from "../Images/snowboard1.jpg";
+import productImg08 from "../Images/snowboard2.jpg";
+import productImg09 from "../Images/snowboard3.jpg";
+import productImg10 from "../Images/rollerskate1.jpg";
 
-import phone01 from "../Images/phone-01.jpg";
-import phone02 from "../Images/phone-02.jpg";
-import phone03 from "../Images/phone-03.png";
-import phone04 from "../Images/phone-04.jpg";
-import phone05 from "../Images/phone-05.jpg";
+import phone01 from "../Images/rollerskate2.jpg";
+import phone02 from "../Images/kayak.jpg";
+import phone03 from "../Images/kayak2.jpg";
+import phone04 from "../Images/volleyball-net.jpg";
+import phone05 from "../Images/baseball-bat.jpg";
 import phone06 from "../Images/phone-06.jpg";
 import phone08 from "../Images/phone-08.png";
 
@@ -109,23 +109,23 @@ export const discoutProducts = [
   },
   {
     id: "02",
-    productName: "Rivet Bigelow Modern ",
+    productName: "Creality Ender 3 Pro 3D Printer ",
     imgUrl: productImg02,
     category: "technology",
     price: 253,
     discount:20,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Unlock your creativity with the Creality Ender 3 Pro 3D Printer.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Creality Ender 3 Pro 3D Printer is a versatile and reliable 3D printing machine that allows you to bring your ideas to life. With its sturdy construction and precise printing capabilities, it delivers high-quality prints with ease. The printer features a large build volume, heated bed, and a user-friendly interface, making it suitable for both beginners and experienced users. Whether you're a hobbyist, artist, or engineer, the Creality Ender 3 Pro 3D Printer is the perfect tool to explore the world of 3D printing.",
     reviews: [
       {
         rating: 4.8,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        text: "This printer exceeded my expectations. It's easy to assemble and produces excellent prints.",
       },
       {
         rating: 4.8,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        text: "I've been using this printer for a while now, and it hasn't let me down. Highly recommended!",
       },
     ],
     avgRating: 4.7,
@@ -270,22 +270,22 @@ export const products = [
 
   {
     id: "03",
-    productName: "Amazon Brand Modern technology",
+    productName: "Prusa i3 MK3S+ 3D Printer",
     imgUrl: productImg03,
     category: "technology",
     price: 173,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Experience precision and reliability with the Prusa i3 MK3S+ 3D Printer.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Prusa i3 MK3S+ 3D Printer is a professional-grade 3D printing machine known for its exceptional print quality and advanced features. Equipped with an auto-leveling bed, filament sensor, and a removable magnetic heatbed, it offers a seamless printing experience. The printer utilizes high-quality components and a robust frame to ensure precise and reliable prints. Whether you're a hobbyist, designer, or engineer, the Prusa i3 MK3S+ 3D Printer is a top choice for achieving outstanding results in your 3D printing projects.",
     reviews: [
       {
         rating: 4.6,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        text: "The Prusa i3 MK3S+ is hands down the best 3D printer I've ever used. The print quality is superb",
       },
       {
         rating: 4.9,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        text: "I've had this printer for a few months now, and it's been flawless. It's definitely worth the investment..",
       },
     ],
     avgRating: 4.7,
@@ -314,14 +314,14 @@ export const products = [
   },
   {
     id: "04",
-    productName: "Fllufy Sheep Sofa",
+    productName: "Canon XA50 Professional Video Camera",
     imgUrl: productImg04,
-    category: "sofa",
+    category: "technology",
     price: 163,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Capture professional-quality videos with the Canon XA50 Video Camera.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Canon XA50 Professional Video Camera is a high-performance camcorder designed for professional videographers and filmmakers. It features a 1.0-inch CMOS sensor and a powerful DIGIC DV 6 image processor, delivering stunning 4K UHD videos with exceptional clarity and detail. The camera offers a versatile 15x optical zoom lens with advanced image stabilization, allowing you to capture smooth and steady footage even in challenging shooting conditions. With a range of professional features, including dual SD card slots, XLR inputs, and manual controls, the Canon XA50 is a reliable and capable tool for capturing your creative vision.",
     reviews: [
       {
         rating: 4.6,
@@ -337,14 +337,14 @@ export const products = [
 
   {
     id: "05",
-    productName: "Faux Velvet Sofa",
+    productName: "Canon VIXIA HF G50 4K Video Camera",
     imgUrl: productImg05,
-    category: "sofa",
+    category: "technology",
     price: 163,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Capture stunning 4K videos with the Canon VIXIA HF G50 Video Camera",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Canon VIXIA HF G50 4K Video Camera is a versatile camcorder designed for professional videography and enthusiast filmmaking. It features a 1/2.3-inch CMOS sensor and Canon's advanced DIGIC DV 6 image processor, delivering exceptional image quality and dynamic range. With its 4K UHD recording capability, you can capture stunning videos with incredible detail and clarity. The camera offers a 20x optical zoom lens with image stabilization, allowing you to get close to the action while maintaining steady footage. It also includes professional features like dual SD card slots, manual controls, and XLR inputs for external microphones. Whether you're shooting documentaries, events, or creative projects, the Canon VIXIA HF G50 empowers you to unleash your creativity and capture professional-grade videos.",
     reviews: [
       {
         rating: 4.6,
@@ -360,14 +360,14 @@ export const products = [
 
   {
     id: "06",
-    productName: "Fllufy Sheep Sofa",
+    productName: "Oculus Quest 2 VR Headset",
     imgUrl: productImg06,
-    category: "sofa",
+    category: "technology",
     price: 163,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Immerse yourself in the world of virtual reality with the Oculus Quest 2 VR Headset.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "Experience virtual reality like never before with the Oculus Quest 2 VR Headset. This all-in-one VR system offers wireless freedom, powerful performance, and stunning visuals. With its high-resolution display and fast refresh rate, you'll enjoy crisp and smooth graphics in your favorite VR games and experiences. The Oculus Quest 2 features built-in sensors for accurate tracking and intuitive hand controls for natural interaction. It also offers room-scale VR, allowing you to move freely in your virtual environment. Whether you're gaming, watching movies, or exploring new worlds, the Oculus Quest 2 delivers an immersive and unforgettable VR experience.",
     reviews: [
       {
         rating: 4.6,
@@ -382,14 +382,14 @@ export const products = [
   },
   {
     id: "07",
-    productName: "Sakarias Armchair",
+    productName: "Burton Custom X Snowboard",
     imgUrl: productImg07,
-    category: "chair",
+    category: "sports",
     price: 99,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Conquer the slopes with the high-performance Burton Custom X Snowboard.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Burton Custom X Snowboard is built for riders who demand the ultimate in precision and performance. With its advanced construction and cutting-edge technologies, this snowboard delivers unrivaled control and responsiveness on the mountain. The camber profile provides powerful edge hold and explosive pop, while the carbon fiber additives enhance stability and strength. Whether you're carving through groomers or charging down steep powder lines, the Burton Custom X will take your riding to the next level. Strap in and experience the pinnacle of snowboarding performance.",
     reviews: [
       {
         rating: 4.6,

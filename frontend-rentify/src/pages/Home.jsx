@@ -7,8 +7,8 @@ import SliderHome from "../components/Slider"
 
 const Home = () => {
   const {addToCart} =useContext(DataContainer);
-  const newArrivalData = products.filter(item => item.category ==="mobile" || item.category ==="wireless");
-  const bestSales = products.filter(item => item.category ==="sofa");
+  const newArrivalData = products.filter(item => item.category ==="tools" || item.category ==="technology");
+  const bestSales = products.filter(item => item.category ==="video games");
   useEffect(()=> {
     window.scrollTo(0,0);
   },[])
