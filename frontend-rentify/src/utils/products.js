@@ -20,15 +20,15 @@ import phone05 from "../Images/baseball-bat.jpg";
 import phone06 from "../Images/phone-06.jpg";
 import phone08 from "../Images/phone-08.png";
 
-import watch01 from "../Images/watch-01.jpg";
-import watch02 from "../Images/watch-02.jpg";
-import watch03 from "../Images/watch-03.jpg";
-import watch04 from "../Images/watch-04.jpg";
+import watch01 from "../Images/tool1-tlb-micro.jpg";
+import watch02 from "../Images/tool1-tlb-mini.png";
+import watch03 from "../Images/tool3-mini-skid.jpg";
+import watch04 from "../Images/sentra.png";
 
-import wireless01 from "../Images/wireless-01.png";
-import wireless02 from "../Images/wireless-02.png";
-import wireless03 from "../Images/wireless-03.png";
-import wireless04 from "../Images/wireless-04.png";
+import wireless01 from "../Images/vehicle-copy.png";
+import wireless02 from "../Images/nintendo switch.jpg";
+import wireless03 from "../Images/png-transparent-jet-black-sony-ps4-pro-console-sony-playstation-4.png";
+import wireless04 from "../Images/xbox-series-x.jpg";
 
 import sofaSlide from "../Images/hero-img.png";
 import watchSlide from "../Images/watch-07.png";
@@ -132,15 +132,15 @@ export const discoutProducts = [
   },
   {
     id: "08",
-    productName: "Baltsar Chair",
+    productName: "Burton Custom Flying V Snowboard",
     imgUrl: productImg08,
-    category: "chair",
+    category: "sports",
     price: 89,
     discount:15,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Unleash your creativity and conquer the mountain with the Burton Custom Flying V Snowboard.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Burton Custom Flying V Snowboard is a versatile all-mountain board that excels in any terrain. Its Flying V profile combines the best of both camber and rocker, providing a playful and forgiving ride without sacrificing control and stability. The medium flex offers a perfect balance between responsiveness and flexibility, allowing you to effortlessly navigate through powder, carve on groomers, and hit the park. With its durable construction and legendary performance, the Burton Custom Flying V Snowboard is the go-to choice for riders of all levels. Take your riding to new heights with this exceptional snowboard.",
     reviews: [
       {
         rating: 4.6,
@@ -155,15 +155,15 @@ export const discoutProducts = [
   },
   {
     id: "09",
-    productName: "Helmar Chair",
+    productName: "Ride Warpig Snowboard",
     imgUrl: productImg09,
-    category: "chair",
+    category: "sports",
     price: 112,
     discount:35,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Dominate the mountain with the Ride Warpig Snowboard, a versatile and aggressive board designed for all conditions.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Ride Warpig Snowboard is a true beast on the slopes. With its unique shape and aggressive profile, it offers unmatched control and power. The Tapered Directional Rocker provides excellent float in powder and effortless turn initiation, while the Carbon Array™ 3 Laminates deliver lightning-fast response and stability at high speeds. The Hybrid Glass construction ensures durability and lively performance, making this board suitable for aggressive riders who want to push their limits. Whether you're charging down steep lines, hitting big jumps, or carving up groomers, the Ride Warpig Snowboard will take your riding to the next level.",
     reviews: [
       {
         rating: 4.6,
@@ -178,15 +178,15 @@ export const discoutProducts = [
   },
   {
     id: "12",
-    productName: "Realme 8",
+    productName: "Adventurer Kayak",
     imgUrl: phone03,
-    category: "mobile",
+    category: "sports",
     price: 599,
     discount:10,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Experience thrilling water adventures with the Adventurer Kayak.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Adventurer Kayak is designed for those who seek thrilling water adventures. Its sleek and durable construction ensures excellent performance and stability on the water. With its spacious cockpit and comfortable seating, you can paddle for hours without any discomfort. Whether you're exploring calm lakes, navigating through river rapids, or embarking on coastal adventures, the Adventurer Kayak is your reliable companion. It offers easy maneuverability, exceptional tracking, and ample storage space for your gear. Get ready to conquer the waterways with this high-quality kayak.",
     reviews: [
       {
         rating: 4.8,
@@ -201,15 +201,15 @@ export const discoutProducts = [
   },
   {
     id: "13",
-    productName: "One Plus Nord",
+    productName: "Pro Volleyball Net",
     imgUrl: phone04,
-    category: "mobile",
+    category: "sports",
     price: 799,
     discount:5,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Enjoy competitive volleyball games with the Pro Volleyball Net",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Pro Volleyball Net is designed for professional-level gameplay. It is made from high-quality materials to withstand intense matches and outdoor conditions. The net features sturdy construction with reinforced edges and durable netting that ensures optimal tension and prevents sagging. With its regulation size and height, it provides an authentic playing experience. The Pro Volleyball Net is easy to set up and compatible with standard volleyball poles. Whether you're playing in your backyard, at the beach, or in a tournament, this net will elevate your volleyball game to new heights.",
     reviews: [
       {
         rating: 4.8,
@@ -428,14 +428,14 @@ export const products = [
 
   {
     id: "08",
-    productName: "Baltsar Chair",
+    productName: "Burton Custom Flying V Snowboard",
     imgUrl: productImg08,
-    category: "chair",
+    category: "sports",
     price: 89,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Unleash your creativity and conquer the mountain with the Burton Custom Flying V Snowboard.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Burton Custom Flying V Snowboard is a versatile all-mountain board that excels in any terrain. Its Flying V profile combines the best of both camber and rocker, providing a playful and forgiving ride without sacrificing control and stability. The medium flex offers a perfect balance between responsiveness and flexibility, allowing you to effortlessly navigate through powder, carve on groomers, and hit the park. With its durable construction and legendary performance, the Burton Custom Flying V Snowboard is the go-to choice for riders of all levels. Take your riding to new heights with this exceptional snowboard.",
     reviews: [
       {
         rating: 4.6,
@@ -451,14 +451,14 @@ export const products = [
 
   {
     id: "09",
-    productName: "Helmar Chair",
+    productName: "Ride Warpig Snowboard",
     imgUrl: productImg09,
-    category: "chair",
+    category: "sports",
     price: 112,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Dominate the mountain with the Ride Warpig Snowboard, a versatile and aggressive board designed for all conditions.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Ride Warpig Snowboard is a true beast on the slopes. With its unique shape and aggressive profile, it offers unmatched control and power. The Tapered Directional Rocker provides excellent float in powder and effortless turn initiation, while the Carbon Array™ 3 Laminates deliver lightning-fast response and stability at high speeds. The Hybrid Glass construction ensures durability and lively performance, making this board suitable for aggressive riders who want to push their limits. Whether you're charging down steep lines, hitting big jumps, or carving up groomers, the Ride Warpig Snowboard will take your riding to the next level.",
     reviews: [
       {
         rating: 4.6,
@@ -474,14 +474,14 @@ export const products = [
 
   {
     id: "10",
-    productName: "Apple iPhone 12 Pro",
+    productName: "Speedy Pro Roller Skates",
     imgUrl: phone01,
-    category: "mobile",
+    category: "sports",
     price: 799,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Experience the thrill of speed with these high-performance roller skates.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "Get ready to take your skating skills to the next level with the Speedy Pro Roller Skates. Designed for speed and precision, these skates feature a lightweight and durable construction. The low-cut boot offers flexibility and freedom of movement, while the high-quality wheels and bearings ensure a smooth and fast ride. Whether you're racing on the track or skating through the city, these roller skates will provide the speed and control you need to dominate the streets. Lace up and get ready for an exhilarating skating experience",
     reviews: [
       {
         rating: 4.8,
@@ -496,14 +496,14 @@ export const products = [
   },
   {
     id: "25",
-    productName: "Sakarias Armchair",
+    productName: "Retro Roller Skates",
     imgUrl: productImg10,
-    category: "chair",
+    category: "sports",
     price: 99,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Experience the nostalgia and joy of roller skating with these stylish retro roller skates.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "Get ready to roll back in time with these Retro Roller Skates. Inspired by the classic design of the 70s, these skates combine style and performance. The high-top boot provides ankle support and stability, while the durable wheels ensure a smooth ride. With a comfortable fit and adjustable straps, these skates are perfect for both beginners and experienced skaters. Whether you're cruising around the park or dancing at the roller rink, these retro roller skates will make you stand out and bring back the fun of roller skating.",
     reviews: [
       {
         rating: 4.6,
@@ -518,14 +518,14 @@ export const products = [
   },
   {
     id: "11",
-    productName: "Apple iPhone 12 Max",
+    productName: "Voyager Pro Kayak",
     imgUrl: phone02,
-    category: "mobile",
+    category: "sports",
     price: 799,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Embark on thrilling water adventures with the Voyager Pro Kayak.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "Experience the joy of paddling with the Voyager Pro Kayak. This versatile kayak is designed for both beginners and experienced paddlers alike. Its durable and lightweight construction ensures easy maneuverability and excellent stability on the water. With its spacious cockpit and comfortable seating, you can enjoy hours of paddling without any discomfort. Whether you're exploring calm lakes or tackling adventurous river rapids, the Voyager Pro Kayak is your perfect companion. Get ready to explore the waterways and create unforgettable memories with this reliable and high-performance kayak.",
     reviews: [
       {
         rating: 4.8,
@@ -541,14 +541,14 @@ export const products = [
 
   {
     id: "12",
-    productName: "Realme 8",
+    productName: "Adventurer Kayak",
     imgUrl: phone03,
-    category: "mobile",
+    category: "sports",
     price: 599,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Experience thrilling water adventures with the Adventurer Kayak.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Adventurer Kayak is designed for those who seek thrilling water adventures. Its sleek and durable construction ensures excellent performance and stability on the water. With its spacious cockpit and comfortable seating, you can paddle for hours without any discomfort. Whether you're exploring calm lakes, navigating through river rapids, or embarking on coastal adventures, the Adventurer Kayak is your reliable companion. It offers easy maneuverability, exceptional tracking, and ample storage space for your gear. Get ready to conquer the waterways with this high-quality kayak.",
     reviews: [
       {
         rating: 4.8,
@@ -564,14 +564,14 @@ export const products = [
 
   {
     id: "13",
-    productName: "One Plus Nord",
+    productName: "Pro Volleyball Net",
     imgUrl: phone04,
-    category: "mobile",
+    category: "sports",
     price: 799,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Enjoy competitive volleyball games with the Pro Volleyball Net.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Pro Volleyball Net is designed for professional-level gameplay. It is made from high-quality materials to withstand intense matches and outdoor conditions. The net features sturdy construction with reinforced edges and durable netting that ensures optimal tension and prevents sagging. With its regulation size and height, it provides an authentic playing experience. The Pro Volleyball Net is easy to set up and compatible with standard volleyball poles. Whether you're playing in your backyard, at the beach, or in a tournament, this net will elevate your volleyball game to new heights.",
     reviews: [
       {
         rating: 4.8,
@@ -587,14 +587,14 @@ export const products = [
 
   {
     id: "14",
-    productName: "Apple iPhone 13 Pro",
+    productName: "Pro Series Baseball Bat",
     imgUrl: phone05,
-    category: "mobile",
+    category: "",
     price: 899,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Experience power and precision with the Pro Series Baseball Bat",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Pro Series Baseball Bat is designed for serious hitters looking to take their game to the next level. It features a durable construction with a solid wood barrel and a comfortable grip handle. The bat's balanced weight distribution and optimized sweet spot provide maximum power and control during each swing. With its sleek design and superior performance, this bat is a favorite among professional players and aspiring athletes alike. Whether you're playing in a league or practicing in the batting cages, the Pro Series Baseball Bat will help you unleash your full hitting potential.",
     reviews: [
       {
         rating: 4.8,
@@ -612,7 +612,7 @@ export const products = [
     id: "15",
     productName: "Samsung Galaxy S22",
     imgUrl: phone06,
-    category: "mobile",
+    category: "technology",
     price: 699,
     shortDesc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -633,14 +633,14 @@ export const products = [
 
   {
     id: "16",
-    productName: "Rolex Watch",
+    productName: "ABC-2000",
     imgUrl: watch01,
-    category: "watch",
+    category: "tools",
     price: 299,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Air-conditioned cabin, joystick controls, quick-attach coupler for attachments, rear stabilizers for enhanced stability during digging operations",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "Air-conditioned cabin, joystick controls, quick-attach coupler for attachments, rear stabilizers for enhanced stability during digging operations",
     reviews: [
       {
         rating: 4.8,
@@ -656,14 +656,14 @@ export const products = [
 
   {
     id: "17",
-    productName: "Timex Easy Reader Watch",
+    productName: "Kubota BX25/BX23",
     imgUrl: watch02,
-    category: "watch",
+    category: "tools",
     price: 299,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Whether you're loading, digging, back-filling or trenching, count on the superior power, performance and durability of a Kubota tractor loader backhoe to get the job done",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "Whether you're loading, digging, back-filling or trenching, count on the superior power, performance and durability of a Kubota tractor loader backhoe to get the job done. Built with legendary Kubota reliability, they're dependable, versatile and easy to operate. Attach and detach implements quickly and easily – often without leaving your seat",
     reviews: [
       {
         rating: 4.8,
@@ -679,14 +679,14 @@ export const products = [
 
   {
     id: "18",
-    productName: "Rolex Watch",
+    productName: "Kubota BX TLB",
     imgUrl: watch03,
-    category: "watch",
+    category: "tools",
     price: 299,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Whether you're loading, digging, back-filling or trenching, count on the superior power, performance and durability of a Kubota tractor loader backhoe to get the job done",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "Whether you're loading, digging, back-filling or trenching, count on the superior power, performance and durability of a Kubota tractor loader backhoe to get the job done. Built with legendary Kubota reliability, they're dependable, versatile and easy to operate. Attach and detach implements quickly and easily – often without leaving your seat.",
     reviews: [
       {
         rating: 4.8,
@@ -702,14 +702,14 @@ export const products = [
 
   {
     id: "19",
-    productName: "Apple Watch",
+    productName: "Nissan Sentra SV",
     imgUrl: watch04,
-    category: "watch",
+    category: "cars",
     price: 399,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Nissan Safety Shield 360, rearview camera, tire pressure monitoring system, advanced airbag system",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "Nissan Safety Shield 360 (includes features like automatic emergency braking, blind-spot warning, rear cross-traffic alert), rearview camera, tire pressure monitoring system, advanced airbag system",
     reviews: [
       {
         rating: 4.8,
@@ -725,14 +725,14 @@ export const products = [
 
   {
     id: "20",
-    productName: "Beat Studio Wireless",
+    productName: "Ford Explorer",
     imgUrl: wireless01,
-    category: "wireless",
+    category: "cars",
     price: 199,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Alcantara and leather upholstery, sport bucket seats, carbon fiber trim, multifunction steering wheel",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "Alcantara and leather upholstery, sport bucket seats, carbon fiber trim, multifunction steering wheel, digital instrument cluster, premium sound system, dual-zone automatic climate control",
     reviews: [
       {
         rating: 4.8,
@@ -748,14 +748,14 @@ export const products = [
 
   {
     id: "21",
-    productName: "Beat EP Headphones",
+    productName: "PlayStation 4",
     imgUrl: wireless03,
-    category: "wireless",
+    category: "video games",
     price: 199,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Immerse yourself in extraordinary gaming experiences.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The PlayStation 4 (PS4) is a powerful gaming console that delivers stunning graphics and immersive gameplay. It features a custom 1.6 GHz octa-core AMD processor and 8GB of GDDR5 RAM, providing smooth performance for both gaming and multimedia applications. The console comes with a DualShock 4 wireless controller that offers precise control and a built-in touchpad for enhanced interaction. With a 500GB hard drive, it offers ample storage for games, apps, and media content. The PS4 supports high-definition gaming and entertainment, including Blu-ray discs and streaming services like Netflix and Hulu. It also offers online multiplayer through the PlayStation Network and access to a wide range of exclusive games and content.",
     reviews: [
       {
         rating: 4.8,
@@ -770,14 +770,14 @@ export const products = [
   },
   {
     id: "22",
-    productName: "Black Headphones",
+    productName: "Nintendo Switch",
     imgUrl: wireless02,
-    category: "wireless",
+    category: "video games",
     price: 169,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "A versatile gaming console for home and on-the-go play.",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Nintendo Switch is a hybrid gaming console that offers both traditional home console gaming and portable handheld gaming in one device. It features a 6.2-inch LCD touchscreen display with a resolution of 1280 x 720, powered by the NVIDIA Custom Tegra processor. With 32GB of internal storage, it provides ample space for game installations, and you can expand the storage using microSDXC cards. The console comes with a pair of detachable Joy-Con controllers that can be used individually or attached to the console for handheld play. It supports Wi-Fi and Bluetooth connectivity, and features a USB Type-C port for charging and connecting to other devices. The Nintendo Switch is compatible with both physical game cartridges and digital downloads from the Nintendo eShop. It also offers online multiplayer and access to exclusive Nintendo Switch Online services.",
     reviews: [
       {
         rating: 4.8,
@@ -792,14 +792,14 @@ export const products = [
   },
   {
     id: "23",
-    productName: "Bluetooth Headphones",
+    productName: "Xbox Series X",
     imgUrl: wireless04,
-    category: "wireless",
+    category: "video games",
     price: 139,
     shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      "Experience the future of gaming with the Xbox Series X",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      "The Xbox Series X is the next-generation gaming console from Microsoft. It features a powerful custom 3.8 GHz AMD Zen 2 processor and 16GB of GDDR6 RAM, delivering stunning visuals and fast loading times. With its 1TB solid-state drive (SSD), you can enjoy quick game startup and seamless gameplay. The console supports 4K gaming at 60 frames per second and is compatible with HDR content for vibrant colors and enhanced contrast. It comes with the new Xbox Wireless Controller, which offers improved ergonomics and low-latency wireless connectivity. The Xbox Series X also provides backward compatibility, allowing you to play a vast library of Xbox One, Xbox 360, and original Xbox games. Take your gaming to the next level with the Xbox Series X.",
     reviews: [
       {
         rating: 4.8,
