@@ -64,6 +64,7 @@ const Cart = () => {
                 <h4>Total Price :</h4>
                 <h3>${totalPrice}.00</h3>
               </div>
+              <button className="stripe-pay">Pay with Stripe</button>
             </div>
           </Col>
         </Row>

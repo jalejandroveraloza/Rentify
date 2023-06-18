@@ -1,5 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { auth } from "../../utils/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 import "./navbar.css";
 import { DataContainer } from "../../App";
 import { Link } from "react-router-dom";
@@ -9,6 +11,13 @@ const NavBar = () => {
   const [expand, setExpand] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
 
+  //change login to logout if user is detected
+  const [user, loading] = useAuthState(auth);
+
+  const handleLogout = () => {
+    auth.signOut();
+  };
+  
   // fixed Header
   function scrollHandler() {
     if (window.scrollY >= 100) {
@@ -30,6 +39,7 @@ const NavBar = () => {
       const storedCart = localStorage.getItem("cartItem");
       setCartItem(JSON.parse(storedCart));
     }
+    
   }, []);
 
   const Login = () => {
@@ -80,9 +90,16 @@ const NavBar = () => {
               <Link aria-label="Go to Shop Page" className="navbar-link" to="/shop" onClick={() => setExpand(false)}>
                 <span className="nav-link-label">Shop</span>
               </Link>
-              <Link aria-label="Go to Login Page" className="navbar-link" to="/login" onClick={() => setExpand(false)}>
+              {user ? (
+                <button className="navbar-link" onClick={handleLogout}>
+                  <span className="nav-link-label">Logout</span>
+                </button>
+              ) : (
+                <Link aria-label="Go to Login Page" className="navbar-link" to="/login" onClick={() => setExpand(false)}>
                 <span className="nav-link-label">Login</span>
             </Link>
+              )}
+              
               <Nav.Item>
               <Login />
             </Nav.Item>

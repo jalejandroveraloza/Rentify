@@ -86,6 +86,16 @@ button {
   flex-wrap: wrap-reverse !important;
 }
 
+.cart-total {
+  display: flex;
+  flex-direction: column;
+}
+.stripe-pay {
+  background-color: rgb(65, 166, 102);
+  border-radius: .4rem;
+  font-weight: bold;
+}
+
 @media (max-width:767px) {
   .filter-bar .row {
     gap: 20px;
@@ -235,7 +245,7 @@ button {
 
 .cart-items .cart-details h3 {
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 500; 
   width: fit-content;
   text-align: center;
   margin-top: 20px;

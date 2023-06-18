@@ -13,7 +13,9 @@
   left: 0;
   top: 0;
 }
-
+.navbar-link {
+  background-color: #708090;
+}
 .navbar-container {
   display: flex;
   justify-content: space-between !important;
