@@ -7,6 +7,7 @@ import Loader from "./components/Loader/Loader";
 import Login from "./components/Login/Login";
 import EmailLogin from "./components/Login/EmailLogin";
 import Register from "./components/Register/Register";
+import AddProduct from "./components/Product/AddProduct";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -70,6 +71,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/login/email" element={<EmailLogin />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/addproduct" element={<AddProduct />} /> 
           </Routes>
           <Footer />
         </Router>

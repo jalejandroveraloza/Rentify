@@ -27,6 +27,11 @@ const Cart = () => {
     toast.success("Item removed from the cart!");
   };
 
+  const handleCheckout = () => {
+    // Handle the checkout logic here
+    toast.success("Checkout Successful!");
+  };
+
   return (
     <section className="cart-items">
       <Container>
@@ -82,6 +87,9 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
+              <button className="checkout-btn" onClick={handleCheckout}>
+                Checkout
+              </button>
             </div>
           </Col>
         </Row>
