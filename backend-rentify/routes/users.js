@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (pool) => {
-  
   // Get all products
   router.get("/", async (req, res) => {
     try {
@@ -108,7 +107,9 @@ module.exports = (pool) => {
       if (result.rows.length === 0) {
         res.status(401).json({ error: "Invalid email or password" });
       } else {
-        res.json(result.rows[0]);
+        const user = result.rows[0];
+        user.password = undefined;
+        res.json(JSON.stringify(result.rows[0]));
       }
     } catch (error) {
       console.error("Error logging in user:", error);

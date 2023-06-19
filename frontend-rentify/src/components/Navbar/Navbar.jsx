@@ -6,11 +6,10 @@ import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import logo_rentify1 from "../../Images/logo_rentify1.png";
 
-const NavBar = () => {
+const NavBar = (props) => {
   const { CartItem, setCartItem, loggedIn, setLoggedIn } = useContext(DataContainer);
   const [expand, setExpand] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // fixed Header
   function scrollHandler() {
@@ -37,12 +36,13 @@ const NavBar = () => {
 
   const handleLogout = () => {
     // Your logout logic goes here
-    setIsLoggedIn(false);
+    props.setIsLoggedIn(false);
   };
 
   const Login = () => {
     // Your login component implementation goes here
-    setIsLoggedIn(true);
+    console.log("Login");
+    // setIsLoggedIn(true);
   };
 
   return (
@@ -74,7 +74,7 @@ const NavBar = () => {
             <span></span>
             <span></span>
           </Navbar.Toggle>
-          {isLoggedIn && (
+          {props.isLoggedIn && (
             <div className="user-icon">
               <FaUser className="user-icon" />
               <div className="user-options">
@@ -95,15 +95,15 @@ const NavBar = () => {
               <Link aria-label="Go to Shop Page" className="navbar-link" to="/shop" onClick={() => setExpand(false)}>
                 <span className="nav-link-label">Shop</span>
               </Link>
-              {!isLoggedIn && (
+              {!props.isLoggedIn && (
                 <Link aria-label="Go to Login Page" className="navbar-link" to="/login" onClick={() => setExpand(false)}>
                   <span className="nav-link-label">Login</span>
                 </Link>
               )}
-              {isLoggedIn && (
-                <Nav.Item>
-                  <Login />
-                </Nav.Item>
+              {props.isLoggedIn && (
+                <Link aria-label="Go to Login Page" className="navbar-link" to="/login" onClick={() => setExpand(false)}>
+                <span className="nav-link-label">Fulano logado</span>
+              </Link>
               )}
             </Nav.Item>
             <Nav.Item className="expanded-cart">

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './email.css';
 
-const EmailLogin = () => {
+const EmailLogin = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,9 +20,12 @@ const EmailLogin = () => {
         body: JSON.stringify({ email, password }),
       });
 
+      const user = await response.json();
+
       if (response.ok) {
-        setIsLoggedIn(true);
-        alert('Login successful!')
+        // setIsLoggedIn(true);
+        props.setUserLoggedIn(true);
+        // alert('Login successful!', response)
         setTimeout(() => {
           navigate('/');
         }, 2000);
@@ -41,7 +44,7 @@ const EmailLogin = () => {
   return (
     <div className="email-login-container">
       <div className="email-login-box">
-        <h2 className="email-login-title">Email Login</h2>
+        <h2 className="email-login-title">Login</h2>
         <form onSubmit={handleLogin}>
           <div className="email-login-form-group">
             <label className="email-login-label">Email:</label>
