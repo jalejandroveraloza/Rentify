@@ -78,7 +78,7 @@ const NavBar = () => {
             <div className="user-icon">
               <FaUser className="user-icon" />
               <div className="user-options">
-                <Link to="/listings">View Listings</Link>
+                <Link to="/addproduct">Add Listings</Link>
                 <button onClick={handleLogout}>Log Out</button>
               </div>
             </div>
