@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import logo_rentify1 from "../../Images/logo_rentify1.png";
 
+
 const NavBar = (props) => {
   const { CartItem, setCartItem, loggedIn, setLoggedIn } = useContext(DataContainer);
   const [expand, setExpand] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
 
   // fixed Header
   function scrollHandler() {
@@ -44,6 +47,10 @@ const NavBar = (props) => {
     // Your login component implementation goes here
     console.log("Login");
     // setIsLoggedIn(true);
+  };
+
+  const handleToggleDropdown = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -94,13 +101,19 @@ const NavBar = (props) => {
               )}
               {props.isLoggedIn && (
             <div className="user-icon">
-              <FaUser className="user-icon" />
+            <FaUser className="user-icon" onClick={handleToggleDropdown} />
+            {isOpen && (
               <div className="user-options">
-              <Link to="/viewproducts">View Listings</Link>
-                <Link to="/addproduct">Add Listings</Link>
+                <Link to="/viewproducts" onClick={handleToggleDropdown}>
+                  View Listings
+                </Link>
+                <Link to="/addproduct" onClick={handleToggleDropdown}>
+                  Add Listings
+                </Link>
                 <button onClick={handleLogout}>Log Out</button>
               </div>
-            </div>
+            )}
+          </div>
           )}
               {/* {props.isLoggedIn && (
                 <Link aria-label="Go to Login Page" className="navbar-link" to="/login" onClick={() => setExpand(false)}>
