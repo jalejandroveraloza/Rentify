@@ -37,6 +37,7 @@ const NavBar = (props) => {
   const handleLogout = () => {
     // Your logout logic goes here
     props.setIsLoggedIn(false);
+    props.setLoggedUser(null);
   };
 
   const Login = () => {
@@ -100,11 +101,11 @@ const NavBar = (props) => {
                   <span className="nav-link-label">Login</span>
                 </Link>
               )}
-              {props.isLoggedIn && (
+              {/* {props.isLoggedIn && (
                 <Link aria-label="Go to Login Page" className="navbar-link" to="/login" onClick={() => setExpand(false)}>
                 <span className="nav-link-label">Fulano logado</span>
               </Link>
-              )}
+              )} */}
             </Nav.Item>
             <Nav.Item className="expanded-cart">
               <Link aria-label="Go to Cart Page" to="/cart" className="cart" data-num={CartItem.length}>

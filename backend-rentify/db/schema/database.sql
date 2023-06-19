@@ -37,7 +37,7 @@ CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
   product_id INT REFERENCES products(id) ON DELETE CASCADE,
-  total SMALLINT NOT NULL,
+  total DECIMAL(10,2) NOT NULL,
   date DATE NOT NULL
 );
 

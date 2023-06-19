@@ -32,37 +32,36 @@ import wireless04 from "../Images/xbox-series-x.jpg";
 import sofaSlide from "../Images/hero-img.png";
 import watchSlide from "../Images/watch-07.png";
 
-
 export const SliderData = [
   {
-      id: 1,
-      title: "50% Off For Your First Rent",
-      desc: "Find all you need in just one place.",
-      cover: sofaSlide,
+    id: 1,
+    title: "50% Off For Your First Rent",
+    desc: "Find all you need in just one place.",
+    cover: sofaSlide,
   },
   {
-      id: 2,
-      title: "50% Off For Your First Rent",
-      desc: "Find all you need in just one place.",
-      cover: phone08,
+    id: 2,
+    title: "50% Off For Your First Rent",
+    desc: "Find all you need in just one place.",
+    cover: phone08,
   },
   {
-      id: 3,
-      title: "50% Off For Your First Rent",
-      desc: "Find all you need in just one place.",
-      cover: wireless01,
+    id: 3,
+    title: "50% Off For Your First Rent",
+    desc: "Find all you need in just one place.",
+    cover: wireless01,
   },
   {
-      id: 4,
-      title: "50% Off For Your First Rent",
-      desc: "Find all you need in just one place.",
-      cover: watchSlide,
+    id: 4,
+    title: "50% Off For Your First Rent",
+    desc: "Find all you need in just one place.",
+    cover: watchSlide,
   },
 ];
 
 export const serviceData = [
   {
-    icon:<ion-icon name="close-circle-outline"></ion-icon>,
+    icon: <ion-icon name="close-circle-outline"></ion-icon>,
     title: "No cancel fee",
     subtitle: "Feel free to cancel at any time.",
     bg: "#FFE4B5",
@@ -94,7 +93,7 @@ export const discoutProducts = [
     imgUrl: productImg01,
     category: "technology",
     price: 193,
-    discount:30,
+    discount: 30,
     shortDesc:
       "Enjoy a cinematic experience with the Epson Home Cinema Projector.",
     description:
@@ -113,7 +112,7 @@ export const discoutProducts = [
     imgUrl: productImg02,
     category: "technology",
     price: 253,
-    discount:20,
+    discount: 20,
     shortDesc:
       "Unlock your creativity with the Creality Ender 3 Pro 3D Printer.",
     description:
@@ -136,7 +135,7 @@ export const discoutProducts = [
     imgUrl: productImg08,
     category: "sports",
     price: 89,
-    discount:15,
+    discount: 15,
     shortDesc:
       "Unleash your creativity and conquer the mountain with the Burton Custom Flying V Snowboard.",
     description:
@@ -159,7 +158,7 @@ export const discoutProducts = [
     imgUrl: productImg09,
     category: "sports",
     price: 112,
-    discount:35,
+    discount: 35,
     shortDesc:
       "Dominate the mountain with the Ride Warpig Snowboard, a versatile and aggressive board designed for all conditions.",
     description:
@@ -182,7 +181,7 @@ export const discoutProducts = [
     imgUrl: phone03,
     category: "sports",
     price: 599,
-    discount:10,
+    discount: 10,
     shortDesc:
       "Experience thrilling water adventures with the Adventurer Kayak.",
     description:
@@ -205,9 +204,8 @@ export const discoutProducts = [
     imgUrl: phone04,
     category: "sports",
     price: 799,
-    discount:5,
-    shortDesc:
-      "Enjoy competitive volleyball games with the Pro Volleyball Net",
+    discount: 5,
+    shortDesc: "Enjoy competitive volleyball games with the Pro Volleyball Net",
     description:
       "The Pro Volleyball Net is designed for professional-level gameplay. It is made from high-quality materials to withstand intense matches and outdoor conditions. The net features sturdy construction with reinforced edges and durable netting that ensures optimal tension and prevents sagging. With its regulation size and height, it provides an authentic playing experience. The Pro Volleyball Net is easy to set up and compatible with standard volleyball poles. Whether you're playing in your backyard, at the beach, or in a tournament, this net will elevate your volleyball game to new heights.",
     reviews: [
@@ -222,8 +220,7 @@ export const discoutProducts = [
     ],
     avgRating: 4.8,
   },
-
-]
+];
 
 export const products = [
   {
@@ -286,28 +283,6 @@ export const products = [
       {
         rating: 4.9,
         text: "I've had this printer for a few months now, and it's been flawless. It's definitely worth the investment..",
-      },
-    ],
-    avgRating: 4.7,
-  },
-  {
-    id: "26",
-    productName: "Rivet Bigelow Modern ",
-    imgUrl: productImg02,
-    category: "sofa",
-    price: 253,
-    shortDesc:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
-    reviews: [
-      {
-        rating: 4.8,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      },
-      {
-        rating: 4.8,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       },
     ],
     avgRating: 4.7,
@@ -585,7 +560,6 @@ export const products = [
     avgRating: 4.8,
   },
 
-
   {
     id: "15",
     productName: "Samsung Galaxy S22",
@@ -730,8 +704,7 @@ export const products = [
     imgUrl: wireless03,
     category: "video games",
     price: 199,
-    shortDesc:
-      "Immerse yourself in extraordinary gaming experiences.",
+    shortDesc: "Immerse yourself in extraordinary gaming experiences.",
     description:
       "The PlayStation 4 (PS4) is a powerful gaming console that delivers stunning graphics and immersive gameplay. It features a custom 1.6 GHz octa-core AMD processor and 8GB of GDDR5 RAM, providing smooth performance for both gaming and multimedia applications. The console comes with a DualShock 4 wireless controller that offers precise control and a built-in touchpad for enhanced interaction. With a 500GB hard drive, it offers ample storage for games, apps, and media content. The PS4 supports high-definition gaming and entertainment, including Blu-ray discs and streaming services like Netflix and Hulu. It also offers online multiplayer through the PlayStation Network and access to a wide range of exclusive games and content.",
     reviews: [
@@ -752,8 +725,7 @@ export const products = [
     imgUrl: wireless02,
     category: "video games",
     price: 169,
-    shortDesc:
-      "A versatile gaming console for home and on-the-go play.",
+    shortDesc: "A versatile gaming console for home and on-the-go play.",
     description:
       "The Nintendo Switch is a hybrid gaming console that offers both traditional home console gaming and portable handheld gaming in one device. It features a 6.2-inch LCD touchscreen display with a resolution of 1280 x 720, powered by the NVIDIA Custom Tegra processor. With 32GB of internal storage, it provides ample space for game installations, and you can expand the storage using microSDXC cards. The console comes with a pair of detachable Joy-Con controllers that can be used individually or attached to the console for handheld play. It supports Wi-Fi and Bluetooth connectivity, and features a USB Type-C port for charging and connecting to other devices. The Nintendo Switch is compatible with both physical game cartridges and digital downloads from the Nintendo eShop. It also offers online multiplayer and access to exclusive Nintendo Switch Online services.",
     reviews: [
@@ -774,8 +746,7 @@ export const products = [
     imgUrl: wireless04,
     category: "video games",
     price: 139,
-    shortDesc:
-      "Experience the future of gaming with the Xbox Series X",
+    shortDesc: "Experience the future of gaming with the Xbox Series X",
     description:
       "The Xbox Series X is the next-generation gaming console from Microsoft. It features a powerful custom 3.8 GHz AMD Zen 2 processor and 16GB of GDDR6 RAM, delivering stunning visuals and fast loading times. With its 1TB solid-state drive (SSD), you can enjoy quick game startup and seamless gameplay. The console supports 4K gaming at 60 frames per second and is compatible with HDR content for vibrant colors and enhanced contrast. It comes with the new Xbox Wireless Controller, which offers improved ergonomics and low-latency wireless connectivity. The Xbox Series X also provides backward compatibility, allowing you to play a vast library of Xbox One, Xbox 360, and original Xbox games. Take your gaming to the next level with the Xbox Series X.",
     reviews: [
@@ -790,5 +761,4 @@ export const products = [
     ],
     avgRating: 4.8,
   },
-
 ];

@@ -4,7 +4,7 @@ import { Col, Container, Row, Button } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const Cart = () => {
+const Cart = (props) => {
   const { CartItem, setCartItem, addToCart, decreaseQty, deleteProduct } = useContext(
     DataContainer
   );
@@ -30,7 +30,45 @@ const Cart = () => {
     toast.success("Item removed from the cart!");
   };
 
+  const handleCheckout = () => {
+    // user_id, product_id, total, date
 
+    const user = JSON.parse(props.loggedUser)
+
+    console.log('props.loggedUser', props.loggedUser)
+    if (!props.isLoggedIn) {
+      alert("Please login to continue");
+      return ;
+    }
+
+
+    const data = {
+      user_id: user.id,
+      product_id: CartItem[0].id,
+      total: totalPriceWithGst,
+      date: new Date().toISOString().slice(0, 10),
+    }
+
+    console.log('data', data)
+    processOrder(data)
+
+  };
+
+  const processOrder = async (data) => {
+    const response = await fetch('http://localhost:8000/api/order/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      const order = await response.json();
+      
+      if (order.id) {
+        alert('Order placed successfully')
+        navigate('/')
+      }
+  }
 
   return (
     <section className="cart-items">
@@ -97,7 +135,7 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-              <Button variant="success" className="checkout-btn">
+              <Button onClick={() => handleCheckout()} variant="success" className="checkout-btn">
                 Checkout
               </Button>
             </div>

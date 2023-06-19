@@ -25,6 +25,7 @@ const EmailLogin = (props) => {
       if (response.ok) {
         // setIsLoggedIn(true);
         props.setUserLoggedIn(true);
+        props.setLoggedUser(user)
         // alert('Login successful!', response)
         setTimeout(() => {
           navigate('/');

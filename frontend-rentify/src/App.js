@@ -21,6 +21,7 @@ function App() {
   const [CartItem, setCartItem] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loggedUser, setLoggedUser] = useState(null);
 
   const addToCart = (product, num = 1) => {
     const productExit = CartItem.find((item) => item.id === product.id);
@@ -88,16 +89,24 @@ function App() {
             theme="light"
           />
 
-          <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+          <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setLoggedUser={setLoggedUser} />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/shop/:id" element={<ProductDetails />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route
+              path="/cart"
+              element={<Cart isLoggedIn={isLoggedIn} loggedUser={loggedUser} />}
+            />
             <Route path="/login" element={<Login />} />
             <Route
               path="/login/email"
-              element={<EmailLogin setUserLoggedIn={setIsLoggedIn} />}
+              element={
+                <EmailLogin
+                  setUserLoggedIn={setIsLoggedIn}
+                  setLoggedUser={setLoggedUser}
+                />
+              }
             />
             <Route path="/register" element={<Register />} />
             <Route path="/addproduct" element={<AddProduct />} />
