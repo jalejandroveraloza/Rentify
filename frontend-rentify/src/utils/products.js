@@ -16,7 +16,6 @@ import phone01 from "../Images/rollerskate2.jpg";
 import phone02 from "../Images/kayak.jpg";
 import phone03 from "../Images/kayak2.jpg";
 import phone04 from "../Images/volleyball-net.jpg";
-import phone05 from "../Images/baseball-bat.jpg";
 import phone06 from "../Images/phone-06.jpg";
 import phone08 from "../Images/phone-08.png";
 
@@ -32,6 +31,7 @@ import wireless04 from "../Images/xbox-series-x.jpg";
 
 import sofaSlide from "../Images/hero-img.png";
 import watchSlide from "../Images/watch-07.png";
+
 
 export const SliderData = [
   {
@@ -585,28 +585,6 @@ export const products = [
     avgRating: 4.8,
   },
 
-  {
-    id: "14",
-    productName: "Pro Series Baseball Bat",
-    imgUrl: phone05,
-    category: "",
-    price: 899,
-    shortDesc:
-      "Experience power and precision with the Pro Series Baseball Bat",
-    description:
-      "The Pro Series Baseball Bat is designed for serious hitters looking to take their game to the next level. It features a durable construction with a solid wood barrel and a comfortable grip handle. The bat's balanced weight distribution and optimized sweet spot provide maximum power and control during each swing. With its sleek design and superior performance, this bat is a favorite among professional players and aspiring athletes alike. Whether you're playing in a league or practicing in the batting cages, the Pro Series Baseball Bat will help you unleash your full hitting potential.",
-    reviews: [
-      {
-        rating: 4.8,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      },
-      {
-        rating: 4.9,
-        text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      },
-    ],
-    avgRating: 4.8,
-  },
 
   {
     id: "15",
