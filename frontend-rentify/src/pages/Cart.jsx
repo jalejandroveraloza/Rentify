@@ -1,10 +1,11 @@
 import { useContext, useEffect } from "react";
 import { DataContainer } from "../App";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row, Button } from "react-bootstrap";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const { CartItem, setCartItem, decreaseQty, deleteProduct } = useContext(
+  const { CartItem, setCartItem, addToCart, decreaseQty, deleteProduct } = useContext(
     DataContainer
   );
   const totalPrice = CartItem.reduce(
@@ -13,6 +14,8 @@ const Cart = () => {
   );
   const gst = totalPrice * 0.05;
   const totalPriceWithGst = totalPrice + gst;
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -30,6 +33,7 @@ const Cart = () => {
   const handleCheckout = () => {
     // Handle the checkout logic here
     toast.success("Checkout Successful!");
+    navigate("/checkout");
   };
 
   return (
@@ -51,20 +55,30 @@ const Cart = () => {
                     </Col>
                     <Col sm={8} md={9}>
                       <Row className="cart-content justify-content-center">
-                        <Col xs={12} className="cart-details">
+                        <Col xs={12} sm={9} className="cart-details">
                           <h3>{item.productName}</h3>
                           <h4>
-                            ${item.price}.00 * {item.qty} {quantityText} = ${productQty}.00
+                            ${item.price}.00 * {item.qty}
+                            <span>${productQty}.00</span>
                           </h4>
+                        </Col>
+                        <Col xs={12} sm={3} className="cartControl">
+                          <Button variant="primary" className="incCart" onClick={() => addToCart(item)}>
+                            <i className="fa-solid fa-plus"></i>
+                          </Button>
+                          <Button variant="primary" className="desCart" onClick={() => decreaseQty(item)}>
+                            <i className="fa-solid fa-minus"></i>
+                          </Button>
                         </Col>
                       </Row>
                     </Col>
-                    <button
+                    <Button
+                      variant="danger"
                       className="delete"
                       onClick={() => handleDeleteProduct(item)}
                     >
                       <ion-icon name="close"></ion-icon>
-                    </button>
+                    </Button>
                   </Row>
                 </div>
               );
@@ -87,9 +101,9 @@ const Cart = () => {
                   </div>
                 </div>
               </div>
-              <button className="checkout-btn" onClick={handleCheckout}>
+              <Button variant="success" className="checkout-btn" onClick={handleCheckout}>
                 Checkout
-              </button>
+              </Button>
             </div>
           </Col>
         </Row>

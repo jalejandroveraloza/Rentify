@@ -5,7 +5,7 @@ import './email.css';
 const EmailLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [registerSuccess, setRegisterSuccess] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -21,7 +21,7 @@ const EmailLogin = () => {
       });
 
       if (response.ok) {
-        setRegisterSuccess(true);
+        setIsLoggedIn(true);
         alert('Login successful!')
         setTimeout(() => {
           navigate('/');

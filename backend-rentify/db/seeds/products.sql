@@ -1,9 +1,9 @@
 INSERT INTO products (category_id, name, price, description, photo_url, active) VALUES
-(1, 'Widget A', 9.99, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'https://example.com/widget_a.jpg', true),
-(1, 'Widget B', 14.99, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem.', 'https://example.com/widget_b.jpg', true),
-(2, 'Shirt A', 24.99, 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut.', 'https://example.com/shirt_a.jpg', true),
-(2, 'Shirt B', 19.99, 'Neque porro quisquam est, qui dolorem ipsum quia dolor.', 'https://example.com/shirt_b.jpg', true),
-(1, 'Widget C', 12.99, 'In hac habitasse platea dictumst. Mauris et rhoncus massa.', 'https://example.com/widget_c.jpg', true),
-(2, 'Shirt C', 29.99, 'Etiam interdum mauris ut sem luctus aliquam. Pellentesque habitant morbi.', 'https://example.com/shirt_c.jpg', true),
-(2, 'Gadget A', 39.99, 'Nullam dictum placerat augue, in feugiat risus bibendum non.', 'https://example.com/gadget_a.jpg', true),
-(2, 'Gadget B', 49.99, 'Praesent efficitur purus sed dolor tristique, eget efficitur odio.', 'https://example.com/gadget_b.jpg', true);
+(1, 'Widget A', 9.99, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 'https://www.thespruce.com/thmb/2usnmSKVJxIC2iijQnWBiCXQHBo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Ryobi-Electric-Riding-Lawn-Mower-7-dd159a06ad714ff3b6ef97e8ca5284cb-Camryn-Rabideau-3e7b2ff1465a4e36bd5c30fe8ae749fd.jpeg', true),
+(1, 'Widget B', 14.99, 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem.', 'https://www.multione.com/wp-content/uploads/2015/02/Multione-snow-blower-03-1030x689.jpg', true),
+(2, 'Shirt A', 24.99, 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut.', 'https://www.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/images/car-reviews/first-drives/legacy/rolls_royce_phantom_top_10.jpg?itok=XjL9f1tx', true),
+(2, 'Shirt B', 19.99, 'Neque porro quisquam est, qui dolorem ipsum quia dolor.', 'https://www.recordpower.co.uk/assets/products/product_images/prod_000284_asset_0_1668008712.jpg', true),
+(1, 'Widget C', 12.99, 'In hac habitasse platea dictumst. Mauris et rhoncus massa.', 'https://www.bosch-professional.com/pk/en/ocsmedia/363811-54/application-image/full/cordless-drill-driver-gsr-180-li-06019f81k0.webp', true),
+(2, 'Shirt C', 29.99, 'Etiam interdum mauris ut sem luctus aliquam. Pellentesque habitant morbi.', 'https://www.burton.com/static/product/W23/10689109000_1.png?impolicy=bgwhite&imwidth=1586', true),
+(2, 'Gadget A', 39.99, 'Nullam dictum placerat augue, in feugiat risus bibendum non.', 'https://fgl.scene7.com/is/image/FGLSportsLtd/FGL_333834988_09_a_HS1005782?bgColor=0,0,0,0&resMode=sharp2&op_sharpen=1&hei=520', true),
+(2, 'Gadget B', 49.99, 'Praesent efficitur purus sed dolor tristique, eget efficitur odio.', 'https://da.lowes.ca/webassets/images/330610377_MainImage_001.jpg', true);

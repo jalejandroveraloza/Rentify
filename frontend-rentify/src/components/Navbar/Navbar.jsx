@@ -37,12 +37,12 @@ const NavBar = () => {
 
   const handleLogout = () => {
     // Your logout logic goes here
-    setLoggedIn(false);
+    setIsLoggedIn(false);
   };
 
   const Login = () => {
     // Your login component implementation goes here
-    return <></>;
+    setIsLoggedIn(true);
   };
 
   return (
@@ -74,7 +74,7 @@ const NavBar = () => {
             <span></span>
             <span></span>
           </Navbar.Toggle>
-          {loggedIn && (
+          {isLoggedIn && (
             <div className="user-icon">
               <FaUser className="user-icon" />
               <div className="user-options">
@@ -95,12 +95,12 @@ const NavBar = () => {
               <Link aria-label="Go to Shop Page" className="navbar-link" to="/shop" onClick={() => setExpand(false)}>
                 <span className="nav-link-label">Shop</span>
               </Link>
-              {!loggedIn && (
+              {!isLoggedIn && (
                 <Link aria-label="Go to Login Page" className="navbar-link" to="/login" onClick={() => setExpand(false)}>
                   <span className="nav-link-label">Login</span>
                 </Link>
               )}
-              {loggedIn && (
+              {isLoggedIn && (
                 <Nav.Item>
                   <Login />
                 </Nav.Item>
