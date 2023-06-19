@@ -75,15 +75,6 @@ const NavBar = (props) => {
             <span></span>
             <span></span>
           </Navbar.Toggle>
-          {props.isLoggedIn && (
-            <div className="user-icon">
-              <FaUser className="user-icon" />
-              <div className="user-options">
-                <Link to="/addproduct">Add Listings</Link>
-                <button onClick={handleLogout}>Log Out</button>
-              </div>
-            </div>
-          )}
         </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end flex-grow-1 pe-3">
@@ -101,6 +92,16 @@ const NavBar = (props) => {
                   <span className="nav-link-label">Login</span>
                 </Link>
               )}
+              {props.isLoggedIn && (
+            <div className="user-icon">
+              <FaUser className="user-icon" />
+              <div className="user-options">
+              <Link to="/viewproducts">View Listings</Link>
+                <Link to="/addproduct">Add Listings</Link>
+                <button onClick={handleLogout}>Log Out</button>
+              </div>
+            </div>
+          )}
               {/* {props.isLoggedIn && (
                 <Link aria-label="Go to Login Page" className="navbar-link" to="/login" onClick={() => setExpand(false)}>
                 <span className="nav-link-label">Fulano logado</span>

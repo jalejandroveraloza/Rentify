@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (pool) => {
-  // Get all Products
+  // Get all Listings
   router.get("/", async (req, res) => {
     try {
       const result = await pool.query("SELECT * FROM products");
@@ -14,6 +14,21 @@ module.exports = (pool) => {
         .json({ error: "An error occurred while retrieving products" });
     }
   });
+
+    // Get products by user ID
+  router.get("/user/:userId", async (req, res) => {
+    const userId = req.params.userId;
+    try {
+      const result = await pool.query("SELECT * FROM products WHERE user_id = $1", [
+        userId,
+      ]);
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving products by user ID:", error);
+      res.status(500).json({ error: "An error occurred while retrieving products by user ID" });
+    }
+  });
+
 
   // Get a specific prodcut by ID
   router.get("/:id", async (req, res) => {
@@ -35,7 +50,7 @@ module.exports = (pool) => {
     }
   });
 
-  // Create a new user
+  // Create a new listing
   router.post("/", async (req, res) => {
     const { name, description, category_id, photo_url, price, active } =
       req.body;
@@ -54,7 +69,7 @@ module.exports = (pool) => {
     }
   });
 
-  // Update an existing user
+  // Update an existing listing
   router.put("/:id", async (req, res) => {
     const productId = req.params.id;
     const { name, description, category_id, photo_url, price, active } =
@@ -77,7 +92,7 @@ module.exports = (pool) => {
     }
   });
 
-  // Delete a user
+  // Delete a listing
   router.delete("/:id", async (req, res) => {
     const productId = req.params.id;
     try {

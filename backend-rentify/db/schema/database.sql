@@ -25,6 +25,7 @@ CREATE TABLE categories (
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
   category_id INT REFERENCES categories(id) ON DELETE CASCADE,
+  user_id INT REFERENCES users(id) ON DELETE CASCADE
   name VARCHAR(255) NOT NULL,
   price SMALLINT NOT NULL,
   description TEXT NOT NULL,

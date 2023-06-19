@@ -49,26 +49,26 @@ const Cart = (props) => {
       date: new Date().toISOString().slice(0, 10),
     }
 
-    console.log('data', data)
-    processOrder(data)
+    // console.log('data', data)
+    // processOrder(data)
 
   };
 
-  const processOrder = async (data) => {
-    const response = await fetch('http://localhost:8000/api/order/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-      const order = await response.json();
+  // const processOrder = async (data) => {
+  //   const response = await fetch('http://localhost:8000/api/order/', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(data),
+  //     });
+  //     const order = await response.json();
       
-      if (order.id) {
-        alert('Order placed successfully')
-        navigate('/')
-      }
-  }
+  //     if (order.id) {
+  //       alert('Order placed successfully')
+  //       navigate('/')
+  //     }
+  // }
 
   return (
     <section className="cart-items">
