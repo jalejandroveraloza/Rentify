@@ -77,7 +77,6 @@ const Login = () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       console.log(result.user);
-      console.log("ring")
 
       // Assuming login is successful
       const popup = window.open('', '_blank');

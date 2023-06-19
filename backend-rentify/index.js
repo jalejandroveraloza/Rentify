@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 
+
 app.use("/api/user", userRouter(pool));
 app.use("/api/product", productRouter(pool));
 app.use("/api/category", categoryRouter(pool));
