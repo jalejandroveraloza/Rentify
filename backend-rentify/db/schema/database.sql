@@ -39,6 +39,7 @@ CREATE TABLE orders (
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
   product_id INT REFERENCES products(id) ON DELETE CASCADE,
   total DECIMAL(10,2) NOT NULL,
+  -- quantity
   date DATE NOT NULL
 );
 

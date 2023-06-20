@@ -30,7 +30,7 @@ module.exports = (pool) => {
   });
 
 
-  // Get a specific prodcut by ID
+  // Get a specific product by ID
   router.get("/:id", async (req, res) => {
     const productId = req.params.id;
     try {
