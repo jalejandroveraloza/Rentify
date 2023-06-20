@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import './addproduct.css';
-import Category from './Category'; // Import the CategoryId hook
+import './addproduct.css';
+import Category from './Category';
 
 const AddProduct = (props) => {
-
   const navigate = useNavigate();
   const [categoryId, setCategoryId] = useState('');
   const [name, setName] = useState('');
@@ -17,8 +16,8 @@ const AddProduct = (props) => {
   const handleCreateListing = async (e) => {
     e.preventDefault();
     if (!props.isLoggedIn) {
-      alert("Please login to continue");
-      return ;
+      alert('Please login to continue');
+      return;
     }
     try {
       const user = JSON.parse(props.loggedUser);
@@ -53,14 +52,14 @@ const AddProduct = (props) => {
   };
 
   return (
-    <div className="create-listing-container">
-      <div className="create-listing-box">
-        <h2 className="create-listing-title">Create Listing</h2>
-        {listingSuccess && <p className="listing-success">Listing created successfully!</p>}
+    <div className="add-product-container">
+      <div className="add-product-content">
+        <h2 className="add-product-title">Create Listing</h2>
+        {listingSuccess && <p className="add-product-success">Listing created successfully!</p>}
         <form onSubmit={handleCreateListing}>
           <div className="form-group">
             <label htmlFor="category">Category:</label>
-              <Category categoryId={categoryId} setCategoryId={setCategoryId}/> 
+            <Category categoryId={categoryId} setCategoryId={setCategoryId} />
           </div>
           <div className="form-group">
             <label htmlFor="name">Name:</label>
@@ -118,7 +117,7 @@ const AddProduct = (props) => {
               <option value={false}>No</option>
             </select>
           </div>
-          <button type="submit" className="create-listing-button">
+          <button type="submit" className="add-product-button">
             Create Listing
           </button>
         </form>

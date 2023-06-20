@@ -30,6 +30,51 @@ module.exports = (pool) => {
   });
 
 
+  // Update a product by ID and user ID
+router.put("/:userId/:productId", async (req, res) => {
+  const userId = req.params.userId;
+  const productId = req.params.productId;
+  const { name, description, category_id, photo_url, price, active } = req.body;
+  
+  try {
+    const result = await pool.query(
+      "UPDATE products SET name = $1, description = $2, category_id = $3, photo_url = $4, price = $5, active = $6 WHERE id = $7 AND user_id = $8 RETURNING *",
+      [name, description, category_id, photo_url, price, active, productId, userId]
+    );
+
+    if (result.rows.length === 0) {
+      res.status(404).json({ error: "Product not found" });
+    } else {
+      res.json(result.rows[0]);
+    }
+  } catch (error) {
+    console.error("Error updating product:", error);
+    res.status(500).json({ error: "An error occurred while updating the product" });
+  }
+});
+
+// Delete a product by ID and user ID
+router.delete("/:userId/:productId", async (req, res) => {
+  const userId = req.params.userId;
+  const productId = req.params.productId;
+
+  try {
+    const result = await pool.query(
+      "DELETE FROM products WHERE id = $1 AND user_id = $2 RETURNING *",
+      [productId, userId]
+    );
+
+    if (result.rows.length === 0) {
+      res.status(404).json({ error: "Product not found" });
+    } else {
+      res.json({ message: "Product deleted successfully" });
+    }
+  } catch (error) {
+    console.error("Error deleting product:", error);
+    res.status(500).json({ error: "An error occurred while deleting the product" });
+  }
+});
+
   // Get a specific product by ID
   router.get("/:id", async (req, res) => {
     const productId = req.params.id;
