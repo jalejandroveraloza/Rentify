@@ -2,13 +2,14 @@ import { useContext, useEffect, useState } from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import "./navbar.css";
 import { DataContainer } from "../../App";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import logo_rentify1 from "../../Images/logo_rentify1.png";
 
 
 const NavBar = (props) => {
-  const { CartItem, setCartItem, loggedIn, setLoggedIn } = useContext(DataContainer);
+  const navigate = useNavigate();
+  const { CartItem, setCartItem } = useContext(DataContainer);
   const [expand, setExpand] = useState(false);
   const [isFixed, setIsFixed] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -41,6 +42,7 @@ const NavBar = (props) => {
     // Your logout logic goes here
     props.setIsLoggedIn(false);
     props.setLoggedUser(null);
+    navigate('/');
   };
 
   const Login = () => {

@@ -52,13 +52,13 @@ module.exports = (pool) => {
 
   // Create a new listing
   router.post("/", async (req, res) => {
-    const { name, description, category_id, photo_url, price, active } =
+    const { name, description, category_id, photo_url, price, active, user_id } =
       req.body;
 
     try {
       const result = await pool.query(
-        "INSERT INTO products (name, description, category_id, photo_url, price, active) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",
-        [name, description, category_id, photo_url, price, active]
+        "INSERT INTO products (name, description, category_id, photo_url, price, active, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *",
+        [name, description, category_id, photo_url, price, active, user_id]
       );
       res.json(result.rows[0]);
     } catch (error) {

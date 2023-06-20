@@ -23,10 +23,8 @@ const EmailLogin = (props) => {
       const user = await response.json();
 
       if (response.ok) {
-        // setIsLoggedIn(true);
         props.setUserLoggedIn(true);
         props.setLoggedUser(user)
-        // alert('Login successful!', response)
         setTimeout(() => {
           navigate('/');
         }, 2000);
@@ -37,7 +35,6 @@ const EmailLogin = (props) => {
       }
 
     } catch (error) {
-      // Handle login error
       console.log(error);
     }
   };

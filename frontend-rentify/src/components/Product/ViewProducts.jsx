@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './addproduct.css';
 
-const ViewProducts = () => {
+const ViewProducts = (props) => {
   const [products, setProducts] = useState([]);
-  const userId = 1; // Set the user ID to the desired value
-
+  const user = JSON.parse(props.loggedUser)
+  console.log('user:', user)
+  const userId = user.id
+  
   useEffect(() => {
     fetchProductsByUserId(userId);
   }, [userId]);
@@ -14,6 +16,7 @@ const ViewProducts = () => {
       const response = await fetch(`http://localhost:8000/api/product/user/${userId}`);
       if (response.ok) {
         const productsData = await response.json();
+        console.log('productsData:', productsData)
         setProducts(productsData);
       } else {
         console.log('Error retrieving products:', response.status);

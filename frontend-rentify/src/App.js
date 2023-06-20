@@ -63,7 +63,6 @@ function App() {
   };
   useEffect(() => {
     localStorage.setItem("cartItem", JSON.stringify(CartItem));
-    console.log(isLoggedIn);
   }, [CartItem, isLoggedIn]);
   return (
     <DataContainer.Provider
@@ -91,7 +90,11 @@ function App() {
             theme="light"
           />
 
-          <NavBar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} setLoggedUser={setLoggedUser} />
+          <NavBar
+            isLoggedIn={isLoggedIn}
+            setIsLoggedIn={setIsLoggedIn}
+            setLoggedUser={setLoggedUser}
+          />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
@@ -111,8 +114,14 @@ function App() {
               }
             />
             <Route path="/register" element={<Register />} />
-            <Route path="/addproduct" element={<AddProduct />} />
-            <Route path="/viewproducts" element={<ViewProducts />} />
+            <Route
+              path="/addproduct"
+              element={<AddProduct isLoggedIn={isLoggedIn} loggedUser={loggedUser}/>}
+            />
+            <Route
+              path="/viewproducts"
+              element={<ViewProducts loggedUser={loggedUser} />}
+            />
             <Route path="/orders" element={<Orders />} />
             <Route path="/checkout" element={<Checkout />} />
           </Routes>

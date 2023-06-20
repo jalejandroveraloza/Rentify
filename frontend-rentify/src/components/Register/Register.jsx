@@ -23,10 +23,7 @@ const Register = () => {
 
       if (response.ok) {
         setRegisterSuccess(true);
-        alert('User successfully registered!')
-        setTimeout(() => {
-          navigate('/');
-        }, 2000);
+        navigate('/login/email');
       } else {
         const errorData = await response.json();
         console.log('Registration error:', errorData);
