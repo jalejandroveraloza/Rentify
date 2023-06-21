@@ -102,24 +102,26 @@ const NavBar = (props) => {
                 </Link>
               )}
               {props.isLoggedIn && (
-            <div className="user-icon">
-            <FaUser className="user-icon" onClick={handleToggleDropdown} />
-            {isOpen && (
-              <div className="user-options">
-                <Link to="/viewproducts" onClick={handleToggleDropdown}>
-                  View Listings
-                </Link>
-                <Link to="/orders" onClick={handleToggleDropdown}>
-                  View Orders
-                </Link>
-                <Link to="/addproduct" onClick={handleToggleDropdown}>
-                  Add Listings
-                </Link>
-                <button onClick={handleLogout}>Log Out</button>
-              </div>
-            )}
-          </div>
-          )}
+  <div className="user-icon">
+    <FaUser className="user-icon" onClick={handleToggleDropdown} />
+    {isOpen && (
+      <div className="dropdown-menu">
+        <Link to="/viewproducts" className="dropdown-item" onClick={handleToggleDropdown}>
+          View Listings
+        </Link>
+        <Link to="/orders" className="dropdown-item" onClick={handleToggleDropdown}>
+          View Orders
+        </Link>
+        <Link to="/addproduct" className="dropdown-item" onClick={handleToggleDropdown}>
+          Add Listings
+        </Link>
+        <button className="dropdown-item" onClick={handleLogout}>
+          Log Out
+        </button>
+      </div>
+    )}
+  </div>
+)}
               {/* {props.isLoggedIn && (
                 <Link aria-label="Go to Login Page" className="navbar-link" to="/login" onClick={() => setExpand(false)}>
                 <span className="nav-link-label">Fulano logado</span>
