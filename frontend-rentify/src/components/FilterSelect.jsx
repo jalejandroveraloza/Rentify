@@ -12,7 +12,7 @@ const options = [
 const customStyles = {
     control: (provided) => ({
         ...provided,
-        backgroundColor: "#708090",
+        backgroundColor: "#23476a",
         color: "white",
         borderRadius: "5px",
         border: "none",

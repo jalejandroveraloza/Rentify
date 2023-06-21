@@ -12,3 +12,4 @@
 
 - View Products is not updating the product properly as it's showing a 500 http error in the back end, properly it's not sending the info properly via the View Products Component.
 
+- Is it possible just to save the total of the product then -> 

@@ -114,7 +114,7 @@ const ViewProducts = (props) => {
                   <td>
                     <div className="action-buttons">
                       <button onClick={() => handleUpdateProduct(product.id)}>Update</button>
-                      <button onClick={() => handleDeleteProduct(product.id)}>Delete</button>
+                      <button onClick={() => handleDeleteProduct(product.id)} className="delete-button">Delete</button>
                     </div>
                   </td>
                 </tr>
