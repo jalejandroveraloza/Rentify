@@ -92,6 +92,10 @@
 .navbar-brand ion-icon {
   font-size: 25px;
 }
+.custom-icon{
+  height: 60px; /* Adjust the height as needed */
+width: auto; /* Maintain the aspect ratio */
+}
 
 .logo {
   font-size: 25px;
@@ -196,10 +200,7 @@
     gap: 5px;
   }
 
-  .custom-icon{
-    height: 30px; /* Adjust the height as needed */
-  width: auto; /* Maintain the aspect ratio */
-  }
+  
   
   /* User Icon */
 .user-icon {

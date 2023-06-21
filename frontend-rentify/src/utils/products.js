@@ -17,7 +17,7 @@ import phone02 from "../Images/kayak.jpg";
 import phone03 from "../Images/kayak2.jpg";
 import phone04 from "../Images/volleyball-net.jpg";
 import phone06 from "../Images/phone-06.jpg";
-import phone08 from "../Images/phone-08.png";
+import phone08 from "../Images/kayak-home.jpg";
 
 import watch01 from "../Images/tool1-tlb-micro.jpg";
 import watch02 from "../Images/tool1-tlb-mini.png";
@@ -29,8 +29,8 @@ import wireless02 from "../Images/nintendo switch.jpg";
 import wireless03 from "../Images/png-transparent-jet-black-sony-ps4-pro-console-sony-playstation-4.png";
 import wireless04 from "../Images/xbox-series-x.jpg";
 
-import sofaSlide from "../Images/hero-img.png";
-import watchSlide from "../Images/watch-07.png";
+import sofaSlide from "../Images/switch.png";
+import watchSlide from "../Images/canon-camera.png";
 
 export const SliderData = [
   {

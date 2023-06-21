@@ -4,7 +4,7 @@ import "./navbar.css";
 import { DataContainer } from "../../App";
 import { Link, useNavigate } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
-import logo_rentify1 from "../../Images/logo_rentify1.png";
+import logo_rentify2 from "../../Images/logo_rentify2.png";
 
 
 const NavBar = (props) => {
@@ -59,7 +59,7 @@ const NavBar = (props) => {
     <Navbar fixed="top" expand="md" className={isFixed ? "navbar fixed" : "navbar"}>
       <Container className="navbar-container">
       <Link to="/" className="navbar-brand">
-         <img src={logo_rentify1} alt="Logo" className="custom-icon" />
+         <img src={logo_rentify2} alt="Logo" className="custom-icon" />
 
         </Link>
         {/* Media cart and toggle */}
