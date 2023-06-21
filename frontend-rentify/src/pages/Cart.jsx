@@ -31,44 +31,18 @@ const Cart = (props) => {
   };
 
   const handleCheckout = () => {
-    // user_id, product_id, total, date
-
     const user = JSON.parse(props.loggedUser)
 
-    console.log('props.loggedUser', props.loggedUser)
     if (!props.isLoggedIn) {
       alert("Please login to continue");
       return ;
     }
 
-
-    const data = {
-      user_id: user.id,
-      product_id: CartItem[0].id,
-      total: totalPriceWithGst,
-      date: new Date().toISOString().slice(0, 10),
-    }
-
-    // console.log('data', data)
-    // processOrder(data)
+    props.setTotalPrice(totalPriceWithGst)
+    props.setCheckoutItems(CartItem)
+    navigate('/checkout')
 
   };
-
-  // const processOrder = async (data) => {
-  //   const response = await fetch('http://localhost:8000/api/order/', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(data),
-  //     });
-  //     const order = await response.json();
-      
-  //     if (order.id) {
-  //       alert('Order placed successfully')
-  //       navigate('/')
-  //     }
-  // }
 
   return (
     <section className="cart-items">

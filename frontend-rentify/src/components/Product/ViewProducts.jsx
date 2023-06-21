@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './viewproducts.css';
 import Category from './Category';
+import { useNavigate } from "react-router-dom";
 
 const ViewProducts = (props) => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const user = JSON.parse(props.loggedUser);
   const userId = user.id;
@@ -12,6 +14,7 @@ const ViewProducts = (props) => {
   }, [userId]);
 
   const fetchProductsByUserId = async (userId) => {
+    
     try {
       const response = await fetch(`http://localhost:8000/api/product/user/${userId}`);
       if (response.ok) {
@@ -25,39 +28,41 @@ const ViewProducts = (props) => {
     }
   };
 
-  const handleUpdateProduct = async (productId) => {
-    try {
-      const updatedProduct = {
-        // Provide the updated product data here
-        name: 'Updated',
-        description: 'Updated Product Description',
-        category_id: 'Updated Category ID',
-        photo_url: 'Updated Photo URL',
-        price: 'Updated Price',
-        active: true,
-      };
+  const handleUpdateProduct = async (product) => {
+    props.setProductToUpdate(product)
+    navigate('/edit-product');
+    // try {
+    //   const updatedProduct = {
+    //     // Provide the updated product data here
+    //     name: 'Updated',
+    //     description: 'Updated Product Description',
+    //     category_id: 'Updated Category ID',
+    //     photo_url: 'Updated Photo URL',
+    //     price: 'Updated Price',
+    //     active: true,
+    //   };
 
-      const response = await fetch(`http://localhost:8000/api/product/${userId}/${productId}`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updatedProduct),
-      });
+    //   const response = await fetch(`http://localhost:8000/api/product/${userId}/${productId}`, {
+    //     method: 'PUT',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //     },
+    //     body: JSON.stringify(updatedProduct),
+    //   });
 
-      if (response.ok) {
-        // Update the products list with the updated product
-        const updatedProducts = products.map((product) =>
-          product.id === productId ? { ...product, ...updatedProduct } : product
-        );
-        setProducts(updatedProducts);
-        console.log('Product updated successfully');
-      } else {
-        console.log('Error updating product:', response.status);
-      }
-    } catch (error) {
-      console.error('Error updating product:', error);
-    }
+    //   if (response.ok) {
+    //     // Update the products list with the updated product
+    //     const updatedProducts = products.map((product) =>
+    //       product.id === productId ? { ...product, ...updatedProduct } : product
+    //     );
+    //     setProducts(updatedProducts);
+    //     console.log('Product updated successfully');
+    //   } else {
+    //     console.log('Error updating product:', response.status);
+    //   }
+    // } catch (error) {
+    //   console.error('Error updating product:', error);
+    // }
   };
 
   const handleDeleteProduct = async (productId) => {
@@ -113,7 +118,7 @@ const ViewProducts = (props) => {
                   <td>{product.active ? 'Yes' : 'No'}</td>
                   <td>
                     <div className="action-buttons">
-                      <button onClick={() => handleUpdateProduct(product.id)}>Update</button>
+                      <button onClick={() => handleUpdateProduct(product)}>Update</button>
                       <button onClick={() => handleDeleteProduct(product.id)} className="delete-button">Delete</button>
                     </div>
                   </td>

@@ -15,6 +15,22 @@ module.exports = (pool) => {
     }
   });
 
+  // Get all orders by user ID
+  router.get("/user/:id", async (req, res) => {
+    try {
+      const result = await pool.query(
+        "SELECT * FROM orders WHERE user_id = $1",
+        [req.params.id]
+      );
+      res.json(result.rows);
+    } catch (error) {
+      console.error("Error retrieving orders:", error);
+      res
+        .status(500)
+        .json({ error: "An error occurred while retrieving orders" });
+    }
+  });
+
   // Get a specific order by ID
   router.get("/:id", async (req, res) => {
     const orderId = req.params.id;

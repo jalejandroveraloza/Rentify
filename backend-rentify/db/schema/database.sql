@@ -39,7 +39,6 @@ CREATE TABLE orders (
   user_id INT REFERENCES users(id) ON DELETE CASCADE,
   product_id INT REFERENCES products(id) ON DELETE CASCADE,
   total DECIMAL(10,2) NOT NULL,
-  -- quantity
   date DATE NOT NULL
 );
 
@@ -47,5 +46,6 @@ CREATE TABLE rent_orders (
   id SERIAL PRIMARY KEY,
   product_id INT REFERENCES products(id) ON DELETE CASCADE,
   order_id INT REFERENCES orders(id) ON DELETE CASCADE
+  
   );
 

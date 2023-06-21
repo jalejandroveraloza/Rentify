@@ -9,7 +9,7 @@ const Orders = () => {
 
   const fetchOrders = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/order");
+      const response = await fetch("http://localhost:8000/api/order/user/21");
       if (response.ok) {
         const data = await response.json();
         setOrders(data);
@@ -30,7 +30,7 @@ const Orders = () => {
           <p>User ID: {order.user_id}</p>
           <p>Product ID: {order.product_id}</p>
           <p>Total: {order.total}</p>
-          <p>Date: {order.date}</p>
+          <p>Date: {order.date.slice(0, 10)}</p>
         </div>
       ))}
     </div>

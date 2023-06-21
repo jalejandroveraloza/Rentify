@@ -8,6 +8,7 @@ import Login from "./components/Login/Login";
 import EmailLogin from "./components/Login/EmailLogin";
 import Register from "./components/Register/Register";
 import AddProduct from "./components/Product/AddProduct";
+import EditProduct from "./components/Product/EditProduct";
 import ViewProducts from "./components/Product/ViewProducts";
 import Orders from "./pages/Orders";
 import Checkout from "./pages/Checkout";
@@ -21,6 +22,9 @@ const ProductDetails = lazy(() => import("./pages/ProductDetails"));
 export const DataContainer = createContext();
 function App() {
   const [CartItem, setCartItem] = useState([]);
+  const [checkoutItems, setCheckoutItems] = useState([]);
+  const [productToUpdate, setProductToUpdate] = useState();
+  const [totalPrice, setTotalPrice] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [loggedUser, setLoggedUser] = useState(null);
@@ -101,7 +105,14 @@ function App() {
             <Route path="/shop/:id" element={<ProductDetails />} />
             <Route
               path="/cart"
-              element={<Cart isLoggedIn={isLoggedIn} loggedUser={loggedUser} />}
+              element={
+                <Cart
+                  isLoggedIn={isLoggedIn}
+                  loggedUser={loggedUser}
+                  setCheckoutItems={setCheckoutItems}
+                  setTotalPrice={setTotalPrice}
+                />
+              }
             />
             <Route path="/login" element={<Login />} />
             <Route
@@ -116,14 +127,42 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route
               path="/addproduct"
-              element={<AddProduct isLoggedIn={isLoggedIn} loggedUser={loggedUser}/>}
+              element={
+                <AddProduct isLoggedIn={isLoggedIn} loggedUser={loggedUser} />
+              }
+            />
+            <Route
+              path="/edit-product"
+              element={
+                <EditProduct
+                  isLoggedIn={isLoggedIn}
+                  loggedUser={loggedUser}
+                  productToUpdate={productToUpdate}
+                />
+              }
             />
             <Route
               path="/viewproducts"
-              element={<ViewProducts loggedUser={loggedUser} />}
+              element={
+                <ViewProducts
+                  loggedUser={loggedUser}
+                  setProductToUpdate={setProductToUpdate}
+                />
+              }
             />
             <Route path="/orders" element={<Orders />} />
-            <Route path="/checkout" element={<Checkout />} />
+            <Route
+              path="/checkout"
+              element={
+                <Checkout
+                  checkoutItems={checkoutItems}
+                  totalPrice={totalPrice}
+                  loggedUser={loggedUser}
+                  isLoggedIn={isLoggedIn}
+                  setCartItem={setCartItem}
+                />
+              }
+            />
           </Routes>
           <Footer />
         </Router>
