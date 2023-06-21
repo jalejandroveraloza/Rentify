@@ -109,6 +109,9 @@ const NavBar = (props) => {
                 <Link to="/viewproducts" onClick={handleToggleDropdown}>
                   View Listings
                 </Link>
+                <Link to="/orders" onClick={handleToggleDropdown}>
+                  View Orders
+                </Link>
                 <Link to="/addproduct" onClick={handleToggleDropdown}>
                   Add Listings
                 </Link>

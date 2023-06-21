@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './email.css';
 
 const EmailLogin = (props) => {
-  const [email, setEmail] = useState('andre.moura@gmail.com');
-  const [password, setPassword] = useState('123123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
