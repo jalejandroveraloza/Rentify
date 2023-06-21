@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./orders.css";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -22,17 +23,21 @@ const Orders = () => {
   };
 
   return (
-    <div>
-      <h1>Orders</h1>
-      {orders.map((order) => (
-        <div key={order.id}>
-          <h3>Order ID: {order.id}</h3>
-          <p>User ID: {order.user_id}</p>
-          <p>Product ID: {order.product_id}</p>
-          <p>Total: {order.total}</p>
-          <p>Date: {order.date.slice(0, 10)}</p>
-        </div>
-      ))}
+    <div className="orders-container">
+      <h1 className="orders-title">Orders</h1>
+      <div className="orders-list">
+        {orders.map((order) => (
+          <div key={order.id} className="order-item">
+            <div className="order-info">
+              <h3 className="order-id">Order ID: {order.id}</h3>
+              <p className="order-detail">User ID: {order.user_id}</p>
+              <p className="order-detail">Product ID: {order.product_id}</p>
+              <p className="order-detail">Total: {order.total}</p>
+              <p className="order-detail">Date: {order.date.slice(0, 10)}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
