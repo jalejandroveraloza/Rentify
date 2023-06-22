@@ -24,6 +24,7 @@ const NavBar = (props) => {
     }
   }
 
+  
   useEffect(() => {
     window.addEventListener("scroll", scrollHandler);
     return () => {
@@ -93,7 +94,7 @@ const NavBar = (props) => {
               </Link>
             </Nav.Item>
             <Nav.Item>
-              <Link aria-label="Go to Shop Page" className="navbar-link" to="/shop" onClick={() => setExpand(false)}>
+              <Link aria-label="Go to Shop Page" className="navbar-shop" to="/shop" onClick={() => setExpand(false)}>
                 <span className="nav-link-label">Shop</span>
               </Link>
               {!props.isLoggedIn && (

@@ -93,8 +93,8 @@
   font-size: 25px;
 }
 .custom-icon{
-  height: 60px; /* Adjust the height as needed */
-width: auto; /* Maintain the aspect ratio */
+  height: 80px; /* Adjust the height as needed */
+  width: auto; /* Maintain the aspect ratio */
 }
 
 .logo {
@@ -115,20 +115,26 @@ width: auto; /* Maintain the aspect ratio */
 }
 
 .nav-link-label {
-  color: black;
+  color: #fff;
   font-size: 18px !important;
   font-weight: 600;
+  
 }
 
 .nav-icon {
   width: 30px;
   height: 30px;
   padding-bottom: 5px;
+  color: #fff;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 .cart {
   position: relative !important;
   z-index: 3;
+  margin-left: 5px;
+  margin-top: 10px;
 }
 
 .cart::before {
@@ -167,6 +173,7 @@ width: auto; /* Maintain the aspect ratio */
   justify-content: center;
   gap: 10px;
   z-index: 1;
+  margin-left: 10px;
 }
 
 .offcanvas.offcanvas-end {
@@ -202,24 +209,25 @@ width: auto; /* Maintain the aspect ratio */
 
 }
 
-
 /* User Icon */
 .user-icon {
+  display: flex;
   position: relative;
+  color: #fff;
+  margin-left: 5px;
+  margin-bottom: 2.5px;
 }
 
 .user-icon:hover {
   cursor: pointer;
 }
 
-.user-icon::before,
 .user-icon::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 2px;
-  background-color: white;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 
 .user-icon::before {
@@ -241,23 +249,23 @@ width: auto; /* Maintain the aspect ratio */
 }
 
 
-/* View Listings, Add Listings, and Logout buttons */
 /* Dropdown Menu */
 .dropdown-menu {
-position: absolute;
-right: 0;
-top: 100%;
-display: none;
-min-width: 10rem;
-padding: 0.5rem 0;
-margin: 0.125rem 0 0;
-font-size: 1rem;
-color: #212529;
-text-align: left;
-background-color: #fff;
-background-clip: padding-box;
-border: 1px solid rgba(0, 0, 0, 0.15);
-border-radius: 0.25rem;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  display: none;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  z-index: 999;
 }
 
 .user-icon:hover + .dropdown-menu,
@@ -268,7 +276,7 @@ display: block;
 .dropdown-item {
 display: block;
 width: 100%;
-padding: 0.25rem 1.5rem;
+padding: 0.5rem 1rem;
 clear: both;
 font-weight: 400;
 color: #212529;
@@ -282,4 +290,32 @@ border: 0;
 .dropdown-item:focus {
 color: #16181b;
 background-color: #f8f9fa;
+font-weight: bold;
+}
+
+
+
+.user-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-shop {
+  margin-right: 20px;
+  display: flex;
+  margin-bottom: 2.5px;
+  Text-decoration: none;
+
+}
+
+.navbar-home {
+  margin-right: 20px;
+  display: flex;
+  margin-bottom: 2.5px;
+  Text-decoration: none;
+
+}
+.show-dropdown {
+  display: block !important;
 }

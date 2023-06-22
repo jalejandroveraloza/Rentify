@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+
 import {
   MDBBtn,
   MDBCard,
@@ -16,13 +18,18 @@ import { useNavigate } from "react-router-dom";
 
 export default function CartCheckout(props) {
   const navigate = useNavigate();
+  const [cardName, setCardName] = useState("");
+  const [cardNumber, setCardNumber] = useState("");
+  const [expiryDate, setExpiryDate] = useState("");
+  const [cvv, setCVV] = useState("");
+
   const handleCheckout = () => {
-    console.log('props.loggedUser', props.loggedUser)
-    const user = JSON.parse(props.loggedUser)
+    console.log("props.loggedUser", props.loggedUser);
+    const user = JSON.parse(props.loggedUser);
 
     if (!props.isLoggedIn) {
       alert("Please login to continue");
-      return ;
+      return;
     }
 
     const data = {
@@ -30,28 +37,28 @@ export default function CartCheckout(props) {
       product_id: props.checkoutItems[0].id,
       total: props.totalPrice,
       date: new Date().toISOString().slice(0, 10),
-    }
+    };
 
-    console.log('data', data)
-    processOrder(data)
-    props.setCartItem([])
+    console.log("data", data);
+    processOrder(data);
+    props.setCartItem([]);
   };
 
   const processOrder = async (data) => {
-    const response = await fetch('http://localhost:8000/api/order/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-      const order = await response.json();
-      
-      if (order.id) {
-        alert('Order placed successfully')
-        navigate('/')
-      }
-  }
+    const response = await fetch("http://localhost:8000/api/order/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const order = await response.json();
+
+    if (order.id) {
+      toast.success("Order Placed Successfuly!");
+      navigate("/");
+    }
+  };
 
   return (
     <section className="h-100 h-custom" style={{ backgroundColor: "#eee" }}>
@@ -70,35 +77,40 @@ export default function CartCheckout(props) {
                     </MDBTypography>
                     {props.checkoutItems.map((item) => {
                       return (
-                      <div className="d-flex align-items-center mb-5">
-                      <div className="flex-shrink-0">
-                        <MDBCardImage
-                          src={item.imgUrl}
-                          fluid
-                          style={{ width: "150px" }}
-                          alt="Generic placeholder image"
-                        />
-                      </div>
+                        <div className="d-flex align-items-center mb-5">
+                          <div className="flex-shrink-0">
+                            <MDBCardImage
+                              src={item.imgUrl}
+                              fluid
+                              style={{ width: "150px" }}
+                              alt="Generic placeholder image"
+                            />
+                          </div>
 
-                      <div className="flex-grow-1 ms-3">
-                        <MDBTypography tag="h5" className="text-primary">
-                          {item.productName}
-                        </MDBTypography>
+                          <div className="flex-grow-1 ms-3">
+                            <MDBTypography tag="h5" className="text-primary">
+                              {item.productName}
+                            </MDBTypography>
 
-                        <div className="d-flex align-items-center">
-                          <p className="fw-bold mb-0 me-5 pe-3">${item.price}</p>
+                            <div className="d-flex align-items-center">
+                              <p className="fw-bold mb-0 me-5 pe-3">
+                                ${item.price}
+                              </p>
 
-                          <div className="def-number-input number-input safari_only">
-                            <button className="minus"></button>
-                            <span
-                              className="quantity fw-bold text-black"
-                              type="number"
-                            >{item.qty} qty</span>
-                            <button className="plus"></button>
+                              <div className="def-number-input number-input safari_only">
+                                <button className="minus"></button>
+                                <span
+                                  className="quantity fw-bold text-black"
+                                  type="number"
+                                >
+                                  {item.qty} qty
+                                </span>
+                                <button className="plus"></button>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>)
+                      );
                     })}
 
                     <hr
@@ -130,20 +142,24 @@ export default function CartCheckout(props) {
                     </MDBTypography>
 
                     <form className="mb-5">
-                      
-                      <MDBInput
-                        className="mb-5"
-                        type="text"
-                        size="lg"
-                        defaultValue="1234 5678 9012 3457"
-                      />
+                    <MDBInput
+                      className="mb-5"
+                      type="text"
+                      size="lg"
+                      placeholder="Card Name"
+                      value={cardName}
+                      onChange={(e) => setCardName(e.target.value)}
+                      visible={true}
+                    />
 
-                      <MDBInput
-                        className="mb-5"
-                        type="text"
-                        size="lg"
-                        defaultValue="Andre Moura"
-                      />
+                  <MDBInput
+                    className="mb-5"
+                    type="text"
+                    size="lg"
+                    placeholder="Card Number"
+                    value={cardNumber}
+                    onChange={(e) => setCardNumber(e.target.value)}
+                  />
 
                       <MDBRow>
                         <MDBCol md="6" className="mb-5">
@@ -153,8 +169,10 @@ export default function CartCheckout(props) {
                             size="lg"
                             minLength="7"
                             maxLength="7"
-                            defaultValue="01/22"
                             placeholder="MM/YYYY"
+                            value={expiryDate}
+                            onChange={(e) => setExpiryDate(e.target.value)}
+                            visible={true}
                           />
                         </MDBCol>
                         <MDBCol md="6" className="mb-5">
@@ -164,18 +182,23 @@ export default function CartCheckout(props) {
                             size="lg"
                             minLength="3"
                             maxLength="3"
-                            placeholder="&#9679;&#9679;&#9679;"
-                            defaultValue="&#9679;&#9679;&#9679;"
+                            placeholder="CVV"
+                            value={cvv}
+                            onChange={(e) => setCVV(e.target.value)}
                           />
                         </MDBCol>
                       </MDBRow>
 
                       <p className="mb-5">
-                        By clicking the buy button, you agree to our 
+                        By clicking the buy button, you agree to our{" "}
                         <a href="#!"> Rental Policy</a>.
                       </p>
 
-                      <Button onClick={() => handleCheckout()} variant="success" className="checkout-btn">
+                      <Button
+                        onClick={() => handleCheckout()}
+                        variant="success"
+                        className="checkout-btn"
+                      >
                         Buy now
                       </Button>
 
