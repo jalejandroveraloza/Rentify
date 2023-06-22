@@ -8,10 +8,7 @@ const Cart = (props) => {
   const { CartItem, setCartItem, addToCart, decreaseQty, deleteProduct } = useContext(
     DataContainer
   );
-  const totalPrice = CartItem.reduce(
-    (price, item) => price + item.qty * item.price,
-    0
-  );
+  const totalPrice = CartItem.reduce((price, item) => price + item.qty * item.price, 0);
   const gst = totalPrice * 0.05;
   const totalPriceWithGst = totalPrice + gst;
 
@@ -31,17 +28,16 @@ const Cart = (props) => {
   };
 
   const handleCheckout = () => {
-    const user = JSON.parse(props.loggedUser)
+    const user = JSON.parse(props.loggedUser);
 
     if (!props.isLoggedIn) {
       alert("Please login to continue");
-      return ;
+      return;
     }
 
-    props.setTotalPrice(totalPriceWithGst)
-    props.setCheckoutItems(CartItem)
-    navigate('/checkout')
-
+    props.setTotalPrice(totalPriceWithGst);
+    props.setCheckoutItems(CartItem);
+    navigate("/checkout");
   };
 
   return (
@@ -109,9 +105,11 @@ const Cart = (props) => {
                   </div>
                 </div>
               </div>
-              <Button onClick={() => handleCheckout()} variant="success" className="checkout-btn">
-                Checkout
-              </Button>
+              {props.isLoggedIn && (
+                <Button onClick={() => handleCheckout()} variant="success" className="checkout-btn">
+                  Checkout
+                </Button>
+              )}
             </div>
           </Col>
         </Row>
